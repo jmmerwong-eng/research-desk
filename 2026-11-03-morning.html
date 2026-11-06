@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F0">
+<title>2026-11-03 早报 · 油价的战争险退了，加息的账没退</title>
+<style>
+/* 投研日报 · 版面样式
+   米白纸底、墨黑正文、砖红点缀；手机优先，正文 16px，行高 1.85 */
+
+:root{
+  --paper:#FAF7F0;
+  --paper2:#F2EDE2;
+  --paper3:#FFFDF8;
+  --ink:#1B1A17;
+  --ink2:#4E4A42;
+  --ink3:#837C6E;
+  --rule:#DCD4C4;
+  --rule2:#EBE4D6;
+  --accent:#8E2F22;
+  --up:#A93A2C;
+  --down:#2E6B4F;
+  --neutral:#8A8275;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:var(--paper);overflow-x:hidden}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.85;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px 72px;overflow-x:clip}
+
+/* ---------- 报头 ---------- */
+.masthead{padding:28px 0 0;text-align:center}
+.masthead .org{
+  font-size:10.5px;letter-spacing:.34em;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:14px;
+}
+.masthead .name{
+  font-family:var(--serif);font-size:31px;font-weight:700;
+  letter-spacing:.16em;line-height:1.2;margin:0;
+}
+.masthead .sub{
+  font-size:11.5px;color:var(--ink3);letter-spacing:.08em;margin-top:10px;
+}
+.rule-double{
+  height:5px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+  margin:16px 0 0;
+}
+.metabar{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11px;color:var(--ink3);letter-spacing:.06em;
+  padding:8px 0 18px;border-bottom:1px solid var(--rule);
+}
+
+/* ---------- 导语 ---------- */
+.lead{padding:26px 0 6px}
+.kicker{
+  font-size:10.5px;letter-spacing:.22em;color:var(--accent);
+  margin-bottom:12px;font-weight:600;
+}
+h1.headline{
+  font-family:var(--serif);font-size:26px;line-height:1.42;
+  font-weight:700;margin:0 0 14px;letter-spacing:.01em;
+}
+.standfirst{font-size:15px;line-height:1.8;color:var(--ink2);margin:0}
+.standfirst strong{color:var(--ink);font-weight:600}
+
+/* ---------- 章节 ---------- */
+section{margin-top:34px}
+.sec-head{border-top:2px solid var(--ink);padding-top:11px;margin-bottom:16px}
+.sec-num{
+  font-size:10px;letter-spacing:.24em;color:var(--accent);
+  font-weight:700;display:block;margin-bottom:3px;
+}
+.sec-head h2{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  margin:0;letter-spacing:.06em;
+}
+.sec-note{font-size:12.5px;color:var(--ink3);line-height:1.7;margin:-6px 0 14px}
+p{margin:0 0 15px}
+.tight p:last-child{margin-bottom:0}
+
+/* ---------- 行情表 ---------- */
+table.tape{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+table.tape th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:right;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.tape th:first-child{text-align:left}
+table.tape td{
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+  text-align:right;color:var(--ink2);overflow-wrap:anywhere;
+}
+table.tape td:first-child{text-align:left;color:var(--ink)}
+table.tape tr:last-child td{border-bottom:1px solid var(--rule)}
+table.tape th:nth-child(1),table.tape td:nth-child(1){width:40%}
+table.tape th:nth-child(2),table.tape td:nth-child(2){width:21%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:24%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:23%;padding-right:9px}
+table.tape th:nth-child(4),table.tape td:nth-child(4){width:16%;padding-left:9px;border-left:1px solid var(--rule2);font-size:12.5px;color:var(--ink3)}
+table.tape th:nth-child(4){font-size:9.5px}
+.up{color:var(--up)}
+.down{color:var(--down)}
+.flat{color:var(--neutral)}
+.sub{font-size:11.5px;color:var(--ink3);display:block;line-height:1.6;margin-top:2px}
+
+/* ---------- 情绪仪表盘 ---------- */
+.gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin:16px 0 10px}
+.gauge{background:var(--paper3);border:1px solid var(--rule2);padding:11px 12px 12px}
+.gauge .g-label{font-size:11px;color:var(--ink3);letter-spacing:.04em}
+.gauge .g-val{
+  font-family:var(--serif);font-size:20px;line-height:1.3;
+  margin:2px 0 1px;color:var(--ink);
+}
+.gauge .g-tag{font-size:10.5px;color:var(--accent);letter-spacing:.06em}
+.g-track{
+  position:relative;height:4px;background:var(--paper2);
+  margin-top:9px;border-radius:2px;
+}
+.g-track i{
+  position:absolute;top:-3px;width:2px;height:10px;
+  background:var(--ink);border-radius:1px;
+}
+.g-scale{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink3);margin-top:5px}
+.temp{
+  display:flex;align-items:baseline;gap:10px;
+  border-top:1px solid var(--rule);padding-top:12px;margin-top:4px;
+}
+.temp b{font-family:var(--serif);font-size:26px;line-height:1}
+.temp span{font-size:12px;color:var(--ink3)}
+
+/* ---------- 归因 ---------- */
+.layer{border-left:2px solid var(--rule);padding-left:14px;margin-bottom:20px}
+.layer h3{
+  font-size:13.5px;margin:0 0 6px;letter-spacing:.04em;font-weight:600;
+}
+.layer h3 em{
+  font-style:normal;font-size:10.5px;color:var(--ink3);
+  margin-left:8px;letter-spacing:.06em;
+}
+.layer p{font-size:15px;color:var(--ink2);margin:0}
+
+/* ---------- 回溯 ---------- */
+.trace-item{
+  padding:12px 0 13px;border-bottom:1px solid var(--rule2);
+}
+.trace-item:last-child{border-bottom:none}
+.trace-top{display:flex;gap:8px;align-items:baseline;margin-bottom:5px}
+.verdict{
+  font-size:10px;letter-spacing:.12em;padding:2px 6px;
+  border:1px solid currentColor;flex:none;border-radius:2px;
+}
+.v-hit{color:var(--ink)}
+.v-miss{color:var(--accent)}
+.v-open{color:var(--neutral)}
+.trace-title{font-size:14px;color:var(--ink);line-height:1.6}
+.trace-note{font-size:13px;color:var(--ink3);line-height:1.7;margin:0}
+.trace-id{font-size:10px;color:var(--ink3);letter-spacing:.06em}
+
+/* ---------- 持仓 ---------- */
+.hold-item{padding:13px 0;border-bottom:1px solid var(--rule2)}
+.hold-item:last-child{border-bottom:none}
+.hold-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hold-name{font-size:14.5px;color:var(--ink);line-height:1.5}
+.hold-chg{font-size:14px;flex:none}
+.hold-meta{display:flex;gap:10px;align-items:center;margin:4px 0 6px}
+.hold-code{font-size:10.5px;color:var(--ink3);letter-spacing:.04em}
+.dir{font-size:10.5px;letter-spacing:.08em;white-space:nowrap;border:1px solid currentColor;padding:0 5px;border-radius:2px;line-height:1.6}
+.chain{font-size:12.5px;color:var(--ink3);line-height:1.72}
+table.overnight th:nth-child(1),table.overnight td:nth-child(1){width:47%}
+table.overnight th:nth-child(2),table.overnight td:nth-child(2){width:22%}
+table.overnight th:nth-child(3),table.overnight td:nth-child(3){width:31%}
+.metabar{flex-wrap:wrap;gap:4px 12px}
+
+/* ---------- 日历 ---------- */
+.cal{list-style:none;padding:0;margin:0}
+.cal li{
+  display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule2);
+}
+.cal .t{
+  font-size:11.5px;color:var(--accent);letter-spacing:.04em;
+  flex:none;width:58px;padding-top:2px;
+}
+.cal .w{font-size:14px;line-height:1.68}
+.cal .w b{font-weight:600}
+.cal .w span{display:block;font-size:12.5px;color:var(--ink3);margin-top:2px}
+
+/* ---------- 小课堂 ---------- */
+.lesson{
+  background:var(--paper3);border:1px dashed var(--rule);
+  padding:18px 16px;margin-top:6px;
+}
+.lesson .lk{
+  font-size:10.5px;letter-spacing:.16em;color:var(--accent);margin-bottom:8px;
+}
+.lesson h3{
+  font-family:var(--serif);font-size:17px;margin:0 0 12px;letter-spacing:.04em;
+}
+.lesson p{font-size:14.5px;color:var(--ink2);line-height:1.85;margin:0 0 12px}
+.lesson .pit{
+  font-size:12.5px;color:var(--accent);border-top:1px solid var(--rule);
+  padding-top:10px;margin-top:2px;line-height:1.7;
+}
+.lesson .pit b{letter-spacing:.04em}
+
+/* ---------- 术语 ---------- */
+.term{
+  border-bottom:1px dotted rgba(142,47,34,.74);
+  padding-bottom:2px;
+  cursor:pointer;color:inherit;
+}
+.term:active{background:rgba(142,47,34,.08)}
+table.tape .term,table.hold .term,.gauge .term{border-bottom-color:rgba(142,47,34,.5)}
+
+#sheet-mask{
+  position:fixed;inset:0;background:rgba(27,26,23,.28);
+  opacity:0;pointer-events:none;transition:opacity .18s;z-index:40;
+}
+#sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--paper3);border-top:2px solid var(--ink);
+  border-radius:14px 14px 0 0;
+  transform:translateY(102%);transition:transform .22s ease;
+  padding:18px 22px calc(22px + env(safe-area-inset-bottom));
+  max-height:70vh;overflow:auto;
+  box-shadow:0 -8px 28px rgba(0,0,0,.10);
+}
+body.sheet-open #sheet{transform:translateY(0)}
+body.sheet-open #sheet-mask{opacity:1;pointer-events:auto}
+#sheet .s-term{
+  font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px;
+}
+#sheet .s-d{font-size:14.5px;color:var(--ink);line-height:1.8;margin-bottom:10px}
+#sheet .s-n{
+  font-size:13px;color:var(--ink3);line-height:1.75;
+  border-left:2px solid var(--accent);padding-left:10px;
+}
+#sheet .s-close{
+  font-size:11px;color:var(--ink3);letter-spacing:.1em;margin-top:14px;text-align:right;
+}
+
+/* ---------- 脚注 ---------- */
+footer{
+  margin-top:44px;border-top:1px solid var(--ink);padding-top:14px;
+  font-size:11.5px;color:var(--ink3);line-height:1.8;
+}
+footer b{color:var(--ink2);font-weight:600}
+.disc{
+  background:var(--paper2);padding:13px 15px;margin-top:18px;
+  font-size:11.5px;color:var(--ink2);line-height:1.75;
+}
+.nav{
+  display:flex;gap:14px;font-size:12px;margin-top:26px;
+  padding-top:14px;border-top:1px solid var(--rule);
+}
+.nav a{color:var(--accent);text-decoration:none}
+.nav a.dim{color:var(--ink3)}
+
+/* ---------- 首页 ---------- */
+.card-list{list-style:none;padding:0;margin:0}
+.card-list li{border-bottom:1px solid var(--rule2);padding:13px 0}
+.card-list a{
+  text-decoration:none;color:var(--ink);display:block;
+}
+.card-list .cl-date{
+  font-size:10.5px;color:var(--ink3);letter-spacing:.1em;margin-bottom:4px;
+  display:flex;gap:10px;align-items:center;
+}
+.tag{
+  font-size:9.5px;letter-spacing:.12em;border:1px solid var(--rule);
+  padding:1px 5px;color:var(--ink2);border-radius:2px;
+}
+.tag.am{border-color:rgba(142,47,34,.4);color:var(--accent)}
+.tag.pm{background:var(--paper2);border-color:var(--rule);color:var(--ink2)}
+.tag.wk{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card-list .cl-title{font-family:var(--serif);font-size:16px;line-height:1.5}
+.card-list .cl-sub{font-size:12.5px;color:var(--ink3);line-height:1.65;margin-top:4px}
+.thread{
+  border-left:2px solid var(--rule);padding:2px 0 2px 13px;margin-bottom:15px;
+}
+.thread .th-t{font-size:13.5px;color:var(--ink);margin-bottom:3px}
+.thread .th-s{font-size:12.5px;color:var(--ink3);line-height:1.7}
+.big-num{
+  font-family:var(--serif);font-size:24px;
+}
+
+@media (min-width:560px){
+  h1.headline{font-size:30px}
+  .masthead .name{font-size:37px}
+  .gauges{grid-template-columns:1fr 1fr 1fr}
+}
+
+/* ---------- 术语：已掌握后收起下点线（仍可点开） ---------- */
+.term.mastered{
+  border-bottom:none;
+  color:inherit;
+}
+.term.mastered:active{background:none}
+
+/* ---------- 页末学习提示条 ---------- */
+.learnbar{
+  margin-top:40px;padding:12px 14px;
+  background:var(--paper2);border-left:2px solid var(--accent);
+  font-size:12px;color:var(--ink2);line-height:1.75;
+}
+.learnbar b{color:var(--ink);font-weight:600}
+.learnbar a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(142,47,34,.3)}
+
+/* ---------- 弹层：统计与操作 ---------- */
+#sheet .s-count{
+  font-size:11px;color:var(--ink3);letter-spacing:.04em;margin:-4px 0 12px;
+}
+#sheet .s-acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+#sheet .s-acts button{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+#sheet .s-acts .s-done{border-color:var(--accent);color:var(--accent)}
+#sheet .s-acts button:active{background:var(--paper2)}
+
+/* ---------- 术语本 ---------- */
+.vprog{margin:22px 0 6px}
+.vprog .vbar{
+  height:4px;background:var(--rule2);position:relative;overflow:hidden;
+}
+.vprog .vbar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);transition:width .3s}
+.vprog .vmeta{
+  margin-top:9px;font-size:11.5px;color:var(--ink3);letter-spacing:.03em;
+}
+.vprog .vmeta b{color:var(--ink);font-weight:600}
+
+.vtabs{display:flex;gap:0;margin:20px 0 0;border-bottom:1px solid var(--ink)}
+.vtab{
+  flex:1;font:inherit;font-size:12px;padding:9px 2px;cursor:pointer;
+  background:none;border:0;border-bottom:2px solid transparent;
+  color:var(--ink3);letter-spacing:.04em;
+}
+.vtab.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+
+.vq{
+  width:100%;margin:16px 0 4px;padding:9px 2px;font:inherit;font-size:14px;
+  background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);
+}
+.vq::placeholder{color:var(--ink3)}
+
+.vlist{margin-top:6px}
+.vitem{
+  padding:15px 0;border-bottom:1px solid var(--rule2);
+}
+.vitem.is-done{opacity:.55}
+.vh{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.vt{font-family:var(--serif);font-size:16.5px;font-weight:700;color:var(--ink)}
+.vb{font-size:10px;letter-spacing:.06em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink3);white-space:nowrap}
+.vb.hard{border-color:var(--accent);color:var(--accent)}
+.vb.done{border-color:var(--down);color:var(--down)}
+.vb.seen{border-color:var(--ink3);color:var(--ink2)}
+.vd{font-size:13.5px;color:var(--ink);line-height:1.75}
+.vn{font-size:12.5px;color:var(--ink3);line-height:1.75;margin-top:4px;padding-left:9px;border-left:2px solid var(--rule)}
+.vfoot{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:8px;font-size:11px;color:var(--ink3);gap:10px;
+}
+.vbtn{
+  font:inherit;font-size:11px;padding:4px 10px;cursor:pointer;white-space:nowrap;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vbtn:active{background:var(--paper2)}
+.vempty{padding:26px 0;font-size:13px;color:var(--ink3);text-align:center}
+
+.vacts{display:flex;gap:10px;margin:14px 0 10px;flex-wrap:wrap}
+.vact{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vact.dim{color:var(--ink3)}
+.vcode{
+  display:none;width:100%;font:12px/1.6 var(--sans);padding:10px;
+  background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);
+  border-radius:2px;resize:vertical;
+}
+.vhint{font-size:11.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.vrule .vr{
+  font-size:13px;color:var(--ink2);line-height:1.8;
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+}
+.vrule .vr b{color:var(--ink)}
+.vrule .vr.dim{color:var(--ink3);font-size:12px}
+
+/* ---------- 新手向新体裁组件（2026-10-28 增）
+   四段式：账面 → 拆一条 → 明天看什么 → 今天该懂的一个词
+   共同点：每个数字后面必须跟一句「所以呢」，即 .ba 锚点句 */
+
+/* 账面表：左列名称，右列数值 + 锚点句 */
+table.board{width:100%;border-collapse:collapse;font-size:14.5px;table-layout:fixed}
+table.board th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:left;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.board td{padding:11px 0;border-bottom:1px solid var(--rule2);vertical-align:top}
+table.board tr:last-child td{border-bottom:1px solid var(--rule)}
+table.board td:first-child{
+  width:31%;color:var(--ink);padding-right:12px;line-height:1.6;
+}
+table.board .bv{
+  font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.35;
+  display:block;letter-spacing:.01em;
+}
+table.board .ba{
+  display:block;font-size:12.5px;color:var(--ink3);line-height:1.68;margin-top:3px;
+}
+table.board .ba b,table.board .ba strong{color:var(--ink2);font-weight:600}
+
+/* 拆一条：四步骨架 */
+.story-h{
+  font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.5;
+  margin:0 0 16px;letter-spacing:.01em;
+}
+.q{border-left:2px solid var(--rule);padding-left:15px}
+.q .step{margin-bottom:20px}
+.q .step:last-child{margin-bottom:0}
+.q .lbl{
+  display:block;font-size:10.5px;letter-spacing:.16em;color:var(--accent);
+  font-weight:700;margin-bottom:5px;
+}
+.q .step p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0}
+.q .step p strong{color:var(--ink);font-weight:600}
+
+/* 明天看什么 */
+ul.sig{list-style:none;padding:0;margin:0}
+ul.sig li{padding:13px 0;border-bottom:1px solid var(--rule2)}
+ul.sig li:last-child{border-bottom:none}
+ul.sig .t{
+  display:block;font-family:var(--serif);font-size:15.5px;font-weight:700;
+  color:var(--ink);margin-bottom:5px;
+}
+ul.sig .b{font-size:14.5px;line-height:1.8;color:var(--ink2)}
+ul.sig .b em{font-style:normal;color:var(--ink);font-weight:600;
+  border-bottom:1px solid rgba(142,47,34,.4)}
+
+/* 今天该懂的一个词 */
+.word{background:var(--paper3);border:1px solid var(--rule2);padding:16px 16px 6px}
+.word .w{
+  font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);
+  margin:0 0 12px;line-height:1.4;
+}
+.word .w small{
+  display:block;font-family:var(--sans);font-size:11px;font-weight:400;
+  color:var(--ink3);letter-spacing:.08em;margin-top:3px;
+}
+.word p{font-size:14.5px;line-height:1.85;color:var(--ink2);margin:0 0 12px}
+.word p strong{color:var(--ink);font-weight:600}
+
+</style>
+</head><body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="org">Personal Research Desk</div>
+    <div class="name">投研日报</div>
+    <div class="sub">早报 · 晚报 · 周报　｜　新闻框架，不做预测</div>
+  </div>
+  <div class="rule-double"></div>
+  <div class="metabar">
+    <span>2026-11-03　早报　第 8 期 · 盘前</span>
+    <span>隔夜行情为 11-02 美股收盘（北京时间 11-03 04:00 前后）；美债为 11-02 纽约尾盘；中债为 11-02 银行间 16:30；A 股为 11-02 收盘</span>
+  </div>
+
+  <div class="lead">
+    <div class="kicker">今日一句话</div>
+    <h1 class="headline">油价的战争险退了，加息的账没退</h1>
+    <p class="standfirst">11 月 2 日夜里，<span class="term" data-t="布伦特原油">布伦特原油</span>一天跌 7.63% 收 104.77 美元，<span class="term" data-t="WTI">WTI</span> 重回 100 美元下方，理由是伊朗说最高领袖已授权政府谈、美国国务卿说不倾向动武。同一夜，美国十年期<span class="term" data-t="国债收益率">国债收益率</span>只跌 1.64 个<span class="term" data-t="基点">基点</span>，两年期反而涨了 0.20 个基点。<strong>油便宜了，不等于借钱便宜了。</strong></p>
+  </div>
+
+  <section><div class='sec-head'><span class='sec-num'>01</span><h2>昨夜的钱价</h2></div><div class='sec-note'>五行只问一句：它动的是「公司赚多少」，还是「钱有多贵」。除<span class="term" data-t="纳指">纳指</span>那一行，其余四行都是后者：<span class="term" data-t="通胀">通胀</span>的价钱松了，借钱的价钱没松。这是<span class="term" data-t="宏观利率">宏观利率</span>的输入。</div><table class='board'><tr><th>看什么</th><th>今天怎么了</th></tr><tr><td><span class="term" data-t="布伦特">布伦特</span>原油</td><td><span class='bv down'>-7.63%</span><span class='ba'>104.77 美元，一天跌 8.66 美元，100 块原油变 92.37 块。上周连涨六周，涨的是「海峡可能被封」的保险费，不是油不够用。</span></td></tr><tr><td>WTI 原油</td><td><span class='bv down'>-7.36%</span><span class='ba'>96.46 美元，从上周五的 104.12 掉回 100 下方。两个基准同时跌，说明跌的不是某地现货，是全球的风险定价。</span></td></tr><tr><td><span class="term" data-t="纳斯达克">纳斯达克</span></td><td><span class='bv down'>-1.07%</span><span class='ba'>25,164.32 点，100 块变 98.93 块。但<span class="term" data-t="道指">道指</span>涨 0.41%：不是所有人都在跑，是钱在换<span class="term" data-t="板块">板块</span>。</span></td></tr><tr><td>美国<span class="term" data-t="十年期国债">十年期国债</span></td><td><span class='bv down'>4.9125%</span><span class='ba'>跌 1.64 个基点，100 块面值约涨 0.14 块，几乎没动。两年期反涨 0.20 个基点：长端给「远处的通胀」降价，短端还钉在下次会议上。</span></td></tr><tr><td><span class="term" data-t="现货黄金">现货黄金</span></td><td><span class='bv up'>+1.85%</span><span class='ba'>3,947.17 美元，一天涨 71.62 美元，从上周五的一年最低往回弹。它涨不是有人怕打仗，是油跌了、<span class="term" data-t="通胀预期">通胀预期</span>跟着降。</span></td></tr></table></section>
+<section><div class='sec-head'><span class='sec-num'>02</span><h2>拆一条</h2></div><div class='sec-note'>今天只讲一件：油跌了 7.63%，借钱的价格为什么几乎没动。</div><h3 class='story-h'>一桶油便宜 8.66 美元，借钱只便宜 1.64 个基点</h3><div class='q'><div class='step'><span class='lbl'>发生了什么</span><p>11 月 2 日纽约收盘，布伦特 1 月合约跌 7.63% 收 104.77 美元，一天跌 8.66 美元；WTI 跌 7.36% 收 96.46 美元，重新跌破 100。触发点是伊朗总统<span class="term" data-t="佩泽希齐扬">佩泽希齐扬</span>说，最高领袖已就谈判授予政府一定权力；伊朗外交部把「七日方案」压成「两日计划」：第一天美国履约，第二天海峡复航。美国国务卿<span class="term" data-t="鲁比奥">鲁比奥</span>说，特朗普不倾向动武，尚未作决定。</p></div><div class='step'><span class='lbl'>为什么会这样</span><p>三步。<br><br>第一步，上周那个价位里，有一部分不是油的钱，是保险费。布伦特连涨六周，靠的是<span class="term" data-t="霍尔木兹海峡">霍尔木兹海峡</span>油轮遇袭、俄罗斯炼厂被无人机打——市场怕的不是今天没油，是下个月运不出来。这种加价买的是「可能」，不是「已经」，能一夜加上也能一夜退掉。<br><br>第二步，退保的开关是谈判。伊朗说最高领袖授权谈、七天压成两天，美国说不倾向动武——两边各让一步，保险费就没理由继续收着。所以昨夜跌的是恐惧的价钱，不是需求的价钱——只有前者能一天跌 7 个百分点。<br><br>第三步，从油到利率要过两道门：油先进加油站，再进物价<span class="term" data-t="指数">指数</span>，才轮到<span class="term" data-t="央行">央行</span>投票。这个时滞决定长债只动一点点。<strong>长端给「远处的通胀」降了价，短端还钉在「下次开会加不<span class="term" data-t="加息">加息</span>」上</strong>，市场对 12 月加息的押注只是小幅回落。</p></div><div class='step'><span class='lbl'>这跟你有什么关系</span><p><strong>如果你还没买：</strong>今天开盘先看「给 AI 修路」的那一段，别看指数。昨夜美股<span class="term" data-t="光通信">光通信</span>和<span class="term" data-t="存储">存储</span>跌得比大盘狠得多：<span class="term" data-t="Lumentum">Lumentum</span> 跌 18.59%、<span class="term" data-t="迈威尔科技">迈威尔科技</span>跌 12.72%；而 A 股昨天涨的恰好是应用端——传媒 +7.77%、计算机 +4.96%。外面硬件降价、里面应用涨价，这个缺口今天开盘要碰一次。<br><br><strong>如果你已经持有：</strong>黄金那只 11 月 2 日<span class="term" data-t="净值">净值</span>跌 2.19%，昨夜现货金反弹 1.85%，今天大概率回一点，但那是从一年最低往回弹，不是反转。你的<span class="term" data-t="债券">债券</span>占 45%，油价跌对债是顺风，可昨夜两年期还在涨，这口气只能算缓和，不算转向。11 月的月投扣款日就是昨天，扣了的话，你这笔买在涨 1.08% 的位置。</p></div><div class='step'><span class='lbl'>什么情况下这条会错</span><p>第一种：谈判只是话术。今天亚洲时段布伦特若重回 110 美元上方，说明「两日计划」没换来东西，保险费重新收回去，这条判断作废。<br><br>第二种：油跌，但债不涨。今天<span class="term" data-t="美债">美债</span>十年期若回到 4.95% 上方，说明市场把油跌读成「经济要变弱」而不是「通胀要变低」——前者对公司利润是坏消息，对债也不见得好，那时怕的是企业还不上钱。</p></div></div></section>
+<section><div class='sec-head'><span class='sec-num'>03</span><h2>今天盯什么</h2></div><div class='sec-note'>三条，每条写清「看到什么，意味着什么」。没有一条要你预判方向。</div><ul class='sig'><li><span class='t'>一、上午央行公布第三次<span class="term" data-t="互换便利">互换便利</span>招标结果</span><div class='b'>31 家券商<span class="term" data-t="基金">基金</span>申报超 1,000 亿元，前两次实际只做了 500 亿和 550 亿，中标费率从 20 个基点降到 10 个基点。额度接近申报额、费率低于 10 个基点，说明机构真愿意借钱买；<em>只有「操作完成」四个字、没有金额和费率，说明还停在纸面</em>。</div></li><li><span class='t'>二、开盘半小时，<span class="term" data-t="光模块">光模块</span>和存储怎么走</span><div class='b'>昨夜美国做光器件的公司跌得最狠，A 股对应的就是给算力修路这一串。昨天它们只是低开高走、没跟上应用端：今天低开 3% 以内、收盘收窄，说明外面的刀没传进来；<em>低开低走、成交比昨天还大，才是真传进来了</em>。</div></li><li><span class='t'>三、布伦特守不守 105 美元，今天是它的考场</span><div class='b'>昨夜收 104.77。今天是美国<span class="term" data-t="中期选举">中期选举</span>投票日，市场最习惯的结果是两院分治、政策少动；若一边全拿，财政与<span class="term" data-t="制裁">制裁</span>动作会变大，油价第一个反应。<em>布伦特回到 110 上方，说明外交只是话术；守在 105 下方，才是恐惧的价钱真退了</em>。</div></li></ul></section>
+<section><div class='sec-head'><span class='sec-num'>04</span><h2>今天该懂的一个词</h2></div><div class='word'><p class='w'>期限利差<small>长债利息减短债利息 · 它量的是「市场怎么看以后」，不是「央行现在怎么做」</small></p><p><span class="term" data-t="期限利差">期限利差</span>就是同一笔钱，借长期和借短期，利息差多少。昨夜美国两年期 4.5895%、十年期 4.9125%，相减是 32.3 个基点（1 个基点 = 0.01%）。前一天这个差是 34.1 个基点，一天只收了 1.8 个基点。</p><p>算一笔：100 块钱，借给美国两年，每年利息 4.59 块；借十年，每年 4.91 块。多锁八年，一年只多拿 0.32 块，八年合计多 2.6 块。这 2.6 块就是市场给「第三年到第十年」的报价：一部分是猜远期通胀，一部分是「钱被锁这么久，得给我补偿」。</p><p>它会怎么骗你：看到<span class="term" data-t="利差">利差</span>一动就说「衰退要来」。昨夜油跌 7.63% 这么大声，十年期只跌 1.64 个基点、两年期还涨 0.20 个基点，利差全天才收 1.8 个基点——这只是「远处的通胀便宜了一点」，不是「经济要垮」。要连着看哪一头在动：长端动是通胀在变，短端动才是央行在变。</p></div></section>
+
+  <div class="learnbar" id="learnbar" data-total="370">本期标注 <b>34</b> 个词　·　点带虚线的词看解释　·　<a href="glossary.html">术语本 →</a></div>
+
+  <footer>
+    <b>数据来源</b>　行情：腾讯行情 / 新浪财经；基金净值：腾讯基金；行业板块：腾讯板块行情；
+    海外利率与宏观：见各期标注。数值均为程序抓取或人工核对后回填。<br>
+    <b>系统</b>　JMMERWANG-PC0 · 事件台账 98 条，其中未结案 57 条；
+    术语库 370 条。本期版面由 content/2026-11-03-morning.json 驱动。
+  </footer>
+  <div class='disc'><b>口径</b>　公开数据的整理与解释，不含建议，不含预测。数值以交易所与官方披露为准，不一致时以官方为准；取不到的项显示「—」，不做估算填充。</div>
+  <div class='nav'><a href='index.html'>← 全部报告</a></div>
+
+</div>
+
+<div id="sheet-mask"></div>
+<div id="sheet">
+  <div class="s-term"></div>
+  <div class="s-count"></div>
+  <div class="s-d"></div>
+  <div class="s-n"></div>
+  <div class="s-acts"><button class="s-done" type="button">我懂了，别再标它</button><button class="s-keep" type="button">继续标着</button></div>
+  <div class="s-close">轻触空白处关闭</div>
+</div>
+<script id="gloss" type="application/json">{"光模块": {"d": "把电信号转成光信号、让数据中心之间用光纤高速传数据的部件，AI 集群越大用得越多。", "n": "它跟着海外云厂商的资本开支走。海外不扩产，国内光模块的订单就少，跟 AI 概念热不热没关系。"}, "布伦特": {"d": "布伦特原油，欧洲北海产的原油基准价，全球约三分之二的原油贸易按它定价，是国际油价的通用参照。", "n": "它里面有一部分是「战争保险费」，不是油的成本。消息一变，这一块能一天加上也能一天退掉，所以别把单日大跌当成供需变了。"}, "债券": {"d": "借条。买债券等于把钱借出去，约定利率和到期日，到期还本。", "n": "债券的收益在买入时就基本确定（除非违约），股票不是。这是两类资产最根本的差别。"}, "WTI": {"d": "美国西得克萨斯中质原油期货，全球两大原油定价基准之一。布伦特代表欧洲与中东现货，WTI 代表北美；国内成品油调价挂的是布伦特、迪拜、米纳斯三地一篮子。", "n": "看到「WTI 跌破 100」别直接换算成国内油价。国内调价看十个工作日的均价，不是单日收盘；单日大跌要撑满一个调价周期，加油站才会动。"}, "佩泽希齐扬": {"d": "伊朗现任总统（2024 年当选），属改革派，主张通过谈判缓和对外关系。伊朗的最高决策权在最高领袖，总统负责执行。", "n": "他说「愿意谈」不等于「能拍板」。谈判授权来自最高领袖，所以市场真正在听的是「最高领袖给了多少权力」，而不是总统的表态本身。"}, "期限利差": {"d": "长期国债收益率减短期国债收益率。", "n": "利差压缩到极低，说明市场预期长期增长和通胀都很弱；利差倒挂常被当作衰退前兆。"}, "制裁": {"d": "限制特定国家或实体的金融与贸易往来。", "n": "制裁影响的是供应链与结算通道，通常先反映在大宗商品和汇率上。"}, "纳指": {"d": "纳斯达克指数的简称，以科技股为主。", "n": "全球成长股定价的锚。它一跌，A 股成长板块通常跟着承压，因为两者的估值逻辑共用同一个折现率。"}, "宏观利率": {"d": "指国债收益率这类「无风险的钱的价格」，是所有资产定价的地板。", "n": "它只解释估值，不解释盈利——利率下行而股价还跌，说明杀的是利润预期，不是折现率。"}, "基金": {"d": "把许多人的钱集中起来，交给管理人按约定策略投资，按份额分收益。", "n": "买基金买的是「策略＋人」，不是某只股票。所以先看清它跟踪什么、持有什么，再谈好坏。"}, "通胀": {"d": "物价总体持续上涨，货币购买力下降。", "n": "通胀高会逼央行维持高利率，高利率压低估值。所以通胀对股票是间接利空，路径是利率。"}, "十年期国债": {"d": "中央政府借十年期的钱所付的利率，整条利率曲线上最关键的一个点。", "n": "它一上行，股票、债券、黄金的估值都要跟着重算，所以又叫无风险利率。看盘软件里写作「10Y 国债收益率」。"}, "道指": {"d": "道琼斯指数的简称，美国 30 家大型公司。", "n": "媒体引用最多，专业圈用得最少，因为价格加权会让高价股影响过大。"}, "鲁比奥": {"d": "美国国务卿（2025 年就任），执行特朗普政府的外交路线，在伊朗问题上公开表态偏向外交解决。", "n": "「不倾向动武」是行政部门的倾向，不是决定。看到官员说软话就当成局势缓和，容易在总统一句话之后被打回原形——昨夜油价先跌 7.6%、尾盘又收复一部分，就是这个原因。"}, "布伦特原油": {"d": "北大西洋布伦特油田的现货原油价格，全球约三分之二的原油贸易用它定价，是油价的国际基准。", "n": "新闻说「油价涨」多数指它，但国内成品油跟的是另一套调价机制；它受地缘消息驱动，一天的涨跌不代表供需真变了。"}, "光通信": {"d": "给数据中心和电信网络传光信号的一整条链：光芯片、光模块、光纤光缆。AI 服务器之间传数据靠它，所以市场把它叫做「给算力修路」的那一段。", "n": "它跟算力订单预期跑，不跟当期利润跑。同一家公司可以一个月涨 40% 再跌回去，业绩一点没变。看到「光模块涨价」先问一句：是真需求多了，还是渠道在囤货。"}, "基点": {"d": "万分之一，写作 bp。利率从 1.627% 到 1.637% 就是上行 1 个基点。", "n": "看债券和利率新闻必须换算成基点，因为 0.01% 的差别在这类资产里是显著变动。"}, "利差": {"d": "两个收益率之差，是最常用的相对定价语言。", "n": "绝对利率告诉你在哪，利差告诉你相对贵贱。"}, "净值": {"d": "每份基金的实际价值。累计净值把历史分红加回去。", "n": "比较基金收益要用累计净值或复权口径，单位净值会被分红压低。"}, "存储": {"d": "「存储芯片」的简称，行业里常说存储涨价、存储周期。", "n": "新闻里的「存储」有时指芯片、有时指模组，指的不是同一家公司，但共用同一条涨价链。"}, "互换便利": {"d": "证券、基金、保险公司互换便利（SFISF）：非银机构把手里的债券、ETF 等资产质押给央行，换进国债、央票等高流动性资产，卖了换钱再买股票。2024 年 10 月创设，2026 年 11 月 3 日完成第三次操作：1,000 亿元、31 家机构投标、中标费率 10 个基点。", "n": "它是「换流动性」不是「送钱」，借了要还、到期要续。余额 1,050 亿元听着大，摊到全市场只是托底量级，不等于增量买盘。"}, "板块": {"d": "把股票按行业或主题分成的组，如银行、半导体、新能源。", "n": "板块是资金流动的观察单位。普涨普跌少见，多数时候是板块之间在换手。"}, "纳斯达克": {"d": "以科技股为主的美国交易所指数，成分含苹果、英伟达等。", "n": "它对利率最敏感——利率一上行，长久期的成长股先跌。它是全球成长股的定价锚。"}, "央行": {"d": "中国的中央银行，即中国人民银行，负责货币政策和汇率管理。", "n": "看它的动作要看三层：说了什么、做了什么、投放了多少。降准降息是信号，逆回购投放是日常。"}, "国债收益率": {"d": "买入国债并持有到期的年化回报率，与债券价格反向变动。", "n": "10 年期国债收益率是资产定价的基准。它上行，等于全市场折现率抬高、估值下移。"}, "迈威尔科技": {"d": "美国芯片公司 Marvell，做数据中心网络芯片、光互连和定制 ASIC，是云厂自研芯片的主要合作方之一。", "n": "它和英伟达不是一回事：英伟达卖整张卡，它卖卡与卡之间的连接。所以它跌，更多在说「云厂资本开支要放缓」，不等于「AI 需求没了」。"}, "美债": {"d": "美国国债，由美国财政部发行，被全球资金当作无风险资产。", "n": "看「美债 10 年期收益率」而不是价格：它上行意味着全球折现率抬高，压制所有高估值资产。"}, "加息": {"d": "央行提高政策利率。", "n": "加息对估值的打击是即时的，对通胀的抑制要滞后一年以上。"}, "霍尔木兹海峡": {"d": "波斯湾通往印度洋的唯一海上通道，全球约五分之一的石油海运量从这里经过，最窄处只有约 39 公里。", "n": "「海峡没封」不等于「油价不涨」。船东要算的是战争险费率，只要袭击还在发生，保险费就先涨，油价跟着涨，哪怕一滴油都没少运。"}, "现货黄金": {"d": "伦敦金市即时交割的黄金报价，单位美元/盎司，是全球金价最常被引用的那个数。国内黄金 ETF 跟踪的是上海金，再按汇率折算成人民币。", "n": "它和你的黄金联接基金不是同一个东西：一个按美元盘中价，一个按上海金收盘价折人民币，中间差一个交易日和一个汇率。昨夜现货金涨 1.85%，不代表你的净值今天涨 1.85%。"}, "中期选举": {"d": "美国总统任期中途举行的国会选举，改选全部众议院席位和约三分之一参议院席位。2026 年的投票日是 11 月 3 日。", "n": "它不改总统，改的是国会归谁。市场最习惯的结果是两院分治——那不是好事，是「变动最小」；真正让价格动起来的是「一边全拿」，因为那意味着财政和制裁的动作会变大。"}, "Lumentum": {"d": "美国光器件公司，做数据中心和电信用的激光器、光收发器件，是北美算力链上游的一个参照标的。", "n": "它的单日跌幅常被当成 A 股光模块的先行指标，但两者客户结构不同：它更依赖北美云厂订单，A 股光模块还吃国内运营商和新兴市场。它跌 18%，不等于 A 股同行该跌 18%。"}, "指数": {"d": "用一篮子股票按规则算出的一个数字，用来代表某类股票的整体表现。", "n": "指数本身不能买，能买的是跟踪它的基金。指数涨 10% 不等于你的基金涨 10%，差额是费用和跟踪误差。"}, "通胀预期": {"d": "市场对未来物价上涨的预期，常用国债与通胀保值债券的利差衡量。", "n": "通胀预期上升，长端利率上升，成长股估值受压。"}}</script>
+<script>
+/* vocab.js — 术语学习状态引擎
+ *
+ * 数据结构（localStorage: rd_vocab_v1）
+ *   { "科创50": {e:曝光天数, n:点击次数, s:连续未点曝光, le:最近曝光日, lc:最近点击日, m:手动标记} }
+ *   m: 0 自动 / 1 手动标为已掌握 / 2 手动要求继续显示
+ *
+ * 判定「已掌握」的两条路：
+ *   A 问过但不再问了：点击过，且曝光≥5天，且最近连续 3 次曝光没点
+ *   B 从来没问过：曝光≥5天，一次都没点过
+ * 两者都要求曝光≥5天——单次阅读不足以证明理解，重复接触后的沉默才算。
+ */
+window.RDVocab = (function () {
+  var KEY = 'rd_vocab_v1';
+  var MODE_KEY = 'rd_vocab_mode_v1';
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
+  }
+  function save(db) {
+    try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {}
+  }
+  function blank() { return { e: 0, n: 0, s: 0, le: '', lc: '', m: 0 }; }
+  function get(db, t) {
+    var v = db[t];
+    if (!v) return blank();
+    if (typeof v.e !== 'number') v = blank();
+    return v;
+  }
+
+  /* 曝光：每个词每天最多计一次 */
+  function touch(t) {
+    var db = load(), v = get(db, t);
+    if (v.m === 1) return;
+    if (v.le !== today()) { v.e += 1; v.s += 1; v.le = today(); }
+    db[t] = v; save(db);
+  }
+
+  /* 点击：清零连续未点计数 */
+  function hit(t) {
+    var db = load(), v = get(db, t);
+    v.n += 1; v.s = 0; v.lc = today();
+    if (!v.e) { v.e = 1; v.le = today(); }
+    db[t] = v; save(db);
+    return v;
+  }
+
+  function mastered(v) {
+    if (v.m === 1) return true;
+    if (v.m === 2) return false;
+    if (v.e >= 5 && v.n >= 1 && v.s >= 3) return true;
+    if (v.e >= 5 && v.n === 0 && v.s >= 5) return true;
+    return false;
+  }
+
+  /* 给一个词定性，用于术语本分组 */
+  function state(v) {
+    if (v.m === 1) return 'manual';
+    if (mastered(v)) return 'done';
+    if (v.n >= 3) return 'hard';
+    if (v.n >= 1) return 'seen';
+    if (v.e > 0) return 'new';
+    return 'idle';
+  }
+
+  function mark(t, m) {
+    var db = load(), v = get(db, t);
+    v.m = m; db[t] = v; save(db);
+  }
+
+  function mode(v) {
+    if (v !== undefined) { try { localStorage.setItem(MODE_KEY, v); } catch (e) {} }
+    try { return localStorage.getItem(MODE_KEY) || 'auto'; } catch (e) { return 'auto'; }
+  }
+
+  /* 遍历页面上的术语，去掉已掌握词的下点线 */
+  function apply(root) {
+    if (mode() === 'all') return;
+    var els = (root || document).querySelectorAll('.term');
+    var db = load();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (t && mastered(get(db, t))) els[i].classList.add('mastered');
+    }
+  }
+
+  /* 记录本页所有术语的曝光 */
+  function register(root) {
+    var els = (root || document).querySelectorAll('.term');
+    var seen = {}, db = load(), dirty = false;
+    var d = today();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (!t || seen[t]) continue;
+      seen[t] = 1;
+      var v = get(db, t);
+      if (v.m === 1) continue;
+      if (v.le !== d) { v.e += 1; v.s += 1; v.le = d; }
+      db[t] = v; dirty = true;
+    }
+    if (dirty) save(db);
+    return Object.keys(seen).length;
+  }
+
+  function stats(all) {
+    var db = load(), done = 0, touched = 0, hard = 0;
+    for (var k in db) {
+      var v = get(db, k);
+      if (mastered(v)) done++;
+      if (v.e > 0) touched++;
+      if (v.n >= 3 && !mastered(v)) hard++;
+    }
+    return { done: done, touched: touched, hard: hard, total: all || 0 };
+  }
+
+  function dump() {
+    try { return btoa(unescape(encodeURIComponent(JSON.stringify(load())))); } catch (e) { return ''; }
+  }
+  function load2(code) {
+    try {
+      var o = JSON.parse(decodeURIComponent(escape(atob(String(code).trim()))));
+      if (o && typeof o === 'object') { save(o); return true; }
+    } catch (e) {}
+    return false;
+  }
+  function reset() { try { localStorage.removeItem(KEY); } catch (e) {} }
+
+  return { load: load, get: get, touch: touch, hit: hit, mastered: mastered, state: state,
+           mark: mark, mode: mode, apply: apply, register: register, stats: stats,
+           dump: dump, load2: load2, reset: reset, today: today };
+})();
+
+</script>
+<script>
+(function () {
+  var V = window.RDVocab;
+  var sheet = document.getElementById('sheet');
+  var mask = document.getElementById('sheet-mask');
+  var raw = document.getElementById('gloss');
+  var GLOSS = {};
+  if (raw) { try { GLOSS = JSON.parse(raw.textContent); } catch (e) { GLOSS = {}; } }
+  if (!V) return;
+
+  /* 先把已掌握的词降为普通文字，再登记曝光，避免先标后隐的闪动 */
+  V.apply(document);
+  var n = V.register(document);
+
+  var bar = document.getElementById('learnbar');
+  var TOTAL = bar ? parseInt(bar.getAttribute('data-total'), 10) || 0 : 0;
+  function paintBar() {
+    if (!bar) return;
+    var st = V.stats();
+    bar.innerHTML = "本期标注 <b>" + n + "</b> 个词　·　术语库里已掌握 <b>" + st.done +
+      "</b> / " + TOTAL + " 条　·　<a href='glossary.html'>术语本 →</a>";
+  }
+  paintBar();
+
+  if (!sheet) return;
+  var tEl = sheet.querySelector('.s-term');
+  var dEl = sheet.querySelector('.s-d');
+  var nEl = sheet.querySelector('.s-n');
+  var cnt = sheet.querySelector('.s-count');
+  var btnDone = sheet.querySelector('.s-done');
+  var btnKeep = sheet.querySelector('.s-keep');
+  var cur = null;
+
+  function refreshCount() {
+    if (!cur || !cnt) return;
+    var v = V.get(V.load(), cur);
+    var bits = [];
+    if (v.n) bits.push('已点开 ' + v.n + ' 次');
+    if (v.e) bits.push('见过 ' + v.e + ' 天');
+    if (v.n >= 3) bits.push('这个词你反复查，值得记下来');
+    else if (v.n === 2) bits.push('第二次点开它了');
+    cnt.textContent = bits.join('　·　');
+  }
+
+  function open(term) {
+    cur = term;
+    var g = GLOSS[term];
+    tEl.textContent = term;
+    dEl.textContent = g ? g.d : '词库中暂无该词条，待补充。';
+    nEl.textContent = g && g.n ? g.n : '';
+    nEl.style.display = g && g.n ? 'block' : 'none';
+    var m = V.get(V.load(), term).m;
+    if (btnKeep) btnKeep.style.display = m === 1 ? 'inline-block' : 'none';
+    if (btnDone) btnDone.style.display = m === 1 ? 'none' : 'inline-block';
+    refreshCount();
+    document.body.classList.add('sheet-open');
+  }
+  function close() { document.body.classList.remove('sheet-open'); cur = null; }
+
+  function repaint(term, m) {
+    V.mark(term, m);
+    var els = document.querySelectorAll('.term[data-t="' + term.replace(/"/g, '\\"') + '"]');
+    for (var i = 0; i < els.length; i++) {
+      if (m === 1) els[i].classList.add('mastered');
+      else els[i].classList.remove('mastered');
+    }
+    paintBar();
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.term') : null;
+    if (t) {
+      var term = t.getAttribute('data-t');
+      V.hit(term);
+      open(term);
+      e.preventDefault();
+      return;
+    }
+    if (e.target === mask) { close(); return; }
+    if (e.target.classList && e.target.classList.contains('s-close')) { close(); return; }
+    if (e.target === btnDone && cur) { repaint(cur, 1); close(); return; }
+    if (e.target === btnKeep && cur) { repaint(cur, 2); close(); return; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+</script>
+<script>
+
+(function(){
+  // 词条在词库缺失时给出提示，不静默失败
+  document.documentElement.classList.add('js-ready');
+  var code = null;
+  try { code = new URLSearchParams(location.search).get('sharecode'); } catch(e) {}
+  if (!code) return;
+  var as = document.querySelectorAll('a[href]');
+  for (var i=0;i<as.length;i++){
+    var h = as[i].getAttribute('href');
+    if (!h || h.charAt(0)==='#' || /^(mailto:|javascript:|tel:)/i.test(h)) continue;
+    var u;
+    try { u = new URL(h, location.href); } catch(e) { continue; }
+    if (u.origin !== location.origin) continue;
+    u.searchParams.set('sharecode', code);
+    as[i].setAttribute('href', u.pathname + u.search + u.hash);
+  }
+})();
+
+</script>
+</body></html>
