@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F0">
+<title>2026-11-01 周报 · 这周砸 A 股的不是利率，是谷歌少花的那 44 亿美元</title>
+<style>
+/* 投研日报 · 版面样式
+   米白纸底、墨黑正文、砖红点缀；手机优先，正文 16px，行高 1.85 */
+
+:root{
+  --paper:#FAF7F0;
+  --paper2:#F2EDE2;
+  --paper3:#FFFDF8;
+  --ink:#1B1A17;
+  --ink2:#4E4A42;
+  --ink3:#837C6E;
+  --rule:#DCD4C4;
+  --rule2:#EBE4D6;
+  --accent:#8E2F22;
+  --up:#A93A2C;
+  --down:#2E6B4F;
+  --neutral:#8A8275;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:var(--paper);overflow-x:hidden}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.85;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px 72px;overflow-x:clip}
+
+/* ---------- 报头 ---------- */
+.masthead{padding:28px 0 0;text-align:center}
+.masthead .org{
+  font-size:10.5px;letter-spacing:.34em;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:14px;
+}
+.masthead .name{
+  font-family:var(--serif);font-size:31px;font-weight:700;
+  letter-spacing:.16em;line-height:1.2;margin:0;
+}
+.masthead .sub{
+  font-size:11.5px;color:var(--ink3);letter-spacing:.08em;margin-top:10px;
+}
+.rule-double{
+  height:5px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+  margin:16px 0 0;
+}
+.metabar{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11px;color:var(--ink3);letter-spacing:.06em;
+  padding:8px 0 18px;border-bottom:1px solid var(--rule);
+}
+
+/* ---------- 导语 ---------- */
+.lead{padding:26px 0 6px}
+.kicker{
+  font-size:10.5px;letter-spacing:.22em;color:var(--accent);
+  margin-bottom:12px;font-weight:600;
+}
+h1.headline{
+  font-family:var(--serif);font-size:26px;line-height:1.42;
+  font-weight:700;margin:0 0 14px;letter-spacing:.01em;
+}
+.standfirst{font-size:15px;line-height:1.8;color:var(--ink2);margin:0}
+.standfirst strong{color:var(--ink);font-weight:600}
+
+/* ---------- 章节 ---------- */
+section{margin-top:34px}
+.sec-head{border-top:2px solid var(--ink);padding-top:11px;margin-bottom:16px}
+.sec-num{
+  font-size:10px;letter-spacing:.24em;color:var(--accent);
+  font-weight:700;display:block;margin-bottom:3px;
+}
+.sec-head h2{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  margin:0;letter-spacing:.06em;
+}
+.sec-note{font-size:12.5px;color:var(--ink3);line-height:1.7;margin:-6px 0 14px}
+p{margin:0 0 15px}
+.tight p:last-child{margin-bottom:0}
+
+/* ---------- 行情表 ---------- */
+table.tape{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+table.tape th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:right;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.tape th:first-child{text-align:left}
+table.tape td{
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+  text-align:right;color:var(--ink2);overflow-wrap:anywhere;
+}
+table.tape td:first-child{text-align:left;color:var(--ink)}
+table.tape tr:last-child td{border-bottom:1px solid var(--rule)}
+table.tape th:nth-child(1),table.tape td:nth-child(1){width:40%}
+table.tape th:nth-child(2),table.tape td:nth-child(2){width:21%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:24%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:23%;padding-right:9px}
+table.tape th:nth-child(4),table.tape td:nth-child(4){width:16%;padding-left:9px;border-left:1px solid var(--rule2);font-size:12.5px;color:var(--ink3)}
+table.tape th:nth-child(4){font-size:9.5px}
+.up{color:var(--up)}
+.down{color:var(--down)}
+.flat{color:var(--neutral)}
+.sub{font-size:11.5px;color:var(--ink3);display:block;line-height:1.6;margin-top:2px}
+
+/* ---------- 情绪仪表盘 ---------- */
+.gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin:16px 0 10px}
+.gauge{background:var(--paper3);border:1px solid var(--rule2);padding:11px 12px 12px}
+.gauge .g-label{font-size:11px;color:var(--ink3);letter-spacing:.04em}
+.gauge .g-val{
+  font-family:var(--serif);font-size:20px;line-height:1.3;
+  margin:2px 0 1px;color:var(--ink);
+}
+.gauge .g-tag{font-size:10.5px;color:var(--accent);letter-spacing:.06em}
+.g-track{
+  position:relative;height:4px;background:var(--paper2);
+  margin-top:9px;border-radius:2px;
+}
+.g-track i{
+  position:absolute;top:-3px;width:2px;height:10px;
+  background:var(--ink);border-radius:1px;
+}
+.g-scale{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink3);margin-top:5px}
+.temp{
+  display:flex;align-items:baseline;gap:10px;
+  border-top:1px solid var(--rule);padding-top:12px;margin-top:4px;
+}
+.temp b{font-family:var(--serif);font-size:26px;line-height:1}
+.temp span{font-size:12px;color:var(--ink3)}
+
+/* ---------- 归因 ---------- */
+.layer{border-left:2px solid var(--rule);padding-left:14px;margin-bottom:20px}
+.layer h3{
+  font-size:13.5px;margin:0 0 6px;letter-spacing:.04em;font-weight:600;
+}
+.layer h3 em{
+  font-style:normal;font-size:10.5px;color:var(--ink3);
+  margin-left:8px;letter-spacing:.06em;
+}
+.layer p{font-size:15px;color:var(--ink2);margin:0}
+
+/* ---------- 回溯 ---------- */
+.trace-item{
+  padding:12px 0 13px;border-bottom:1px solid var(--rule2);
+}
+.trace-item:last-child{border-bottom:none}
+.trace-top{display:flex;gap:8px;align-items:baseline;margin-bottom:5px}
+.verdict{
+  font-size:10px;letter-spacing:.12em;padding:2px 6px;
+  border:1px solid currentColor;flex:none;border-radius:2px;
+}
+.v-hit{color:var(--ink)}
+.v-miss{color:var(--accent)}
+.v-open{color:var(--neutral)}
+.trace-title{font-size:14px;color:var(--ink);line-height:1.6}
+.trace-note{font-size:13px;color:var(--ink3);line-height:1.7;margin:0}
+.trace-id{font-size:10px;color:var(--ink3);letter-spacing:.06em}
+
+/* ---------- 持仓 ---------- */
+.hold-item{padding:13px 0;border-bottom:1px solid var(--rule2)}
+.hold-item:last-child{border-bottom:none}
+.hold-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hold-name{font-size:14.5px;color:var(--ink);line-height:1.5}
+.hold-chg{font-size:14px;flex:none}
+.hold-meta{display:flex;gap:10px;align-items:center;margin:4px 0 6px}
+.hold-code{font-size:10.5px;color:var(--ink3);letter-spacing:.04em}
+.dir{font-size:10.5px;letter-spacing:.08em;white-space:nowrap;border:1px solid currentColor;padding:0 5px;border-radius:2px;line-height:1.6}
+.chain{font-size:12.5px;color:var(--ink3);line-height:1.72}
+table.overnight th:nth-child(1),table.overnight td:nth-child(1){width:47%}
+table.overnight th:nth-child(2),table.overnight td:nth-child(2){width:22%}
+table.overnight th:nth-child(3),table.overnight td:nth-child(3){width:31%}
+.metabar{flex-wrap:wrap;gap:4px 12px}
+
+/* ---------- 日历 ---------- */
+.cal{list-style:none;padding:0;margin:0}
+.cal li{
+  display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule2);
+}
+.cal .t{
+  font-size:11.5px;color:var(--accent);letter-spacing:.04em;
+  flex:none;width:58px;padding-top:2px;
+}
+.cal .w{font-size:14px;line-height:1.68}
+.cal .w b{font-weight:600}
+.cal .w span{display:block;font-size:12.5px;color:var(--ink3);margin-top:2px}
+
+/* ---------- 小课堂 ---------- */
+.lesson{
+  background:var(--paper3);border:1px dashed var(--rule);
+  padding:18px 16px;margin-top:6px;
+}
+.lesson .lk{
+  font-size:10.5px;letter-spacing:.16em;color:var(--accent);margin-bottom:8px;
+}
+.lesson h3{
+  font-family:var(--serif);font-size:17px;margin:0 0 12px;letter-spacing:.04em;
+}
+.lesson p{font-size:14.5px;color:var(--ink2);line-height:1.85;margin:0 0 12px}
+.lesson .pit{
+  font-size:12.5px;color:var(--accent);border-top:1px solid var(--rule);
+  padding-top:10px;margin-top:2px;line-height:1.7;
+}
+.lesson .pit b{letter-spacing:.04em}
+
+/* ---------- 术语 ---------- */
+.term{
+  border-bottom:1px dotted rgba(142,47,34,.74);
+  padding-bottom:2px;
+  cursor:pointer;color:inherit;
+}
+.term:active{background:rgba(142,47,34,.08)}
+table.tape .term,table.hold .term,.gauge .term{border-bottom-color:rgba(142,47,34,.5)}
+
+#sheet-mask{
+  position:fixed;inset:0;background:rgba(27,26,23,.28);
+  opacity:0;pointer-events:none;transition:opacity .18s;z-index:40;
+}
+#sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--paper3);border-top:2px solid var(--ink);
+  border-radius:14px 14px 0 0;
+  transform:translateY(102%);transition:transform .22s ease;
+  padding:18px 22px calc(22px + env(safe-area-inset-bottom));
+  max-height:70vh;overflow:auto;
+  box-shadow:0 -8px 28px rgba(0,0,0,.10);
+}
+body.sheet-open #sheet{transform:translateY(0)}
+body.sheet-open #sheet-mask{opacity:1;pointer-events:auto}
+#sheet .s-term{
+  font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px;
+}
+#sheet .s-d{font-size:14.5px;color:var(--ink);line-height:1.8;margin-bottom:10px}
+#sheet .s-n{
+  font-size:13px;color:var(--ink3);line-height:1.75;
+  border-left:2px solid var(--accent);padding-left:10px;
+}
+#sheet .s-close{
+  font-size:11px;color:var(--ink3);letter-spacing:.1em;margin-top:14px;text-align:right;
+}
+
+/* ---------- 脚注 ---------- */
+footer{
+  margin-top:44px;border-top:1px solid var(--ink);padding-top:14px;
+  font-size:11.5px;color:var(--ink3);line-height:1.8;
+}
+footer b{color:var(--ink2);font-weight:600}
+.disc{
+  background:var(--paper2);padding:13px 15px;margin-top:18px;
+  font-size:11.5px;color:var(--ink2);line-height:1.75;
+}
+.nav{
+  display:flex;gap:14px;font-size:12px;margin-top:26px;
+  padding-top:14px;border-top:1px solid var(--rule);
+}
+.nav a{color:var(--accent);text-decoration:none}
+.nav a.dim{color:var(--ink3)}
+
+/* ---------- 首页 ---------- */
+.card-list{list-style:none;padding:0;margin:0}
+.card-list li{border-bottom:1px solid var(--rule2);padding:13px 0}
+.card-list a{
+  text-decoration:none;color:var(--ink);display:block;
+}
+.card-list .cl-date{
+  font-size:10.5px;color:var(--ink3);letter-spacing:.1em;margin-bottom:4px;
+  display:flex;gap:10px;align-items:center;
+}
+.tag{
+  font-size:9.5px;letter-spacing:.12em;border:1px solid var(--rule);
+  padding:1px 5px;color:var(--ink2);border-radius:2px;
+}
+.tag.am{border-color:rgba(142,47,34,.4);color:var(--accent)}
+.tag.pm{background:var(--paper2);border-color:var(--rule);color:var(--ink2)}
+.tag.wk{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card-list .cl-title{font-family:var(--serif);font-size:16px;line-height:1.5}
+.card-list .cl-sub{font-size:12.5px;color:var(--ink3);line-height:1.65;margin-top:4px}
+.thread{
+  border-left:2px solid var(--rule);padding:2px 0 2px 13px;margin-bottom:15px;
+}
+.thread .th-t{font-size:13.5px;color:var(--ink);margin-bottom:3px}
+.thread .th-s{font-size:12.5px;color:var(--ink3);line-height:1.7}
+.big-num{
+  font-family:var(--serif);font-size:24px;
+}
+
+@media (min-width:560px){
+  h1.headline{font-size:30px}
+  .masthead .name{font-size:37px}
+  .gauges{grid-template-columns:1fr 1fr 1fr}
+}
+
+/* ---------- 术语：已掌握后收起下点线（仍可点开） ---------- */
+.term.mastered{
+  border-bottom:none;
+  color:inherit;
+}
+.term.mastered:active{background:none}
+
+/* ---------- 页末学习提示条 ---------- */
+.learnbar{
+  margin-top:40px;padding:12px 14px;
+  background:var(--paper2);border-left:2px solid var(--accent);
+  font-size:12px;color:var(--ink2);line-height:1.75;
+}
+.learnbar b{color:var(--ink);font-weight:600}
+.learnbar a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(142,47,34,.3)}
+
+/* ---------- 弹层：统计与操作 ---------- */
+#sheet .s-count{
+  font-size:11px;color:var(--ink3);letter-spacing:.04em;margin:-4px 0 12px;
+}
+#sheet .s-acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+#sheet .s-acts button{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+#sheet .s-acts .s-done{border-color:var(--accent);color:var(--accent)}
+#sheet .s-acts button:active{background:var(--paper2)}
+
+/* ---------- 术语本 ---------- */
+.vprog{margin:22px 0 6px}
+.vprog .vbar{
+  height:4px;background:var(--rule2);position:relative;overflow:hidden;
+}
+.vprog .vbar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);transition:width .3s}
+.vprog .vmeta{
+  margin-top:9px;font-size:11.5px;color:var(--ink3);letter-spacing:.03em;
+}
+.vprog .vmeta b{color:var(--ink);font-weight:600}
+
+.vtabs{display:flex;gap:0;margin:20px 0 0;border-bottom:1px solid var(--ink)}
+.vtab{
+  flex:1;font:inherit;font-size:12px;padding:9px 2px;cursor:pointer;
+  background:none;border:0;border-bottom:2px solid transparent;
+  color:var(--ink3);letter-spacing:.04em;
+}
+.vtab.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+
+.vq{
+  width:100%;margin:16px 0 4px;padding:9px 2px;font:inherit;font-size:14px;
+  background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);
+}
+.vq::placeholder{color:var(--ink3)}
+
+.vlist{margin-top:6px}
+.vitem{
+  padding:15px 0;border-bottom:1px solid var(--rule2);
+}
+.vitem.is-done{opacity:.55}
+.vh{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.vt{font-family:var(--serif);font-size:16.5px;font-weight:700;color:var(--ink)}
+.vb{font-size:10px;letter-spacing:.06em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink3);white-space:nowrap}
+.vb.hard{border-color:var(--accent);color:var(--accent)}
+.vb.done{border-color:var(--down);color:var(--down)}
+.vb.seen{border-color:var(--ink3);color:var(--ink2)}
+.vd{font-size:13.5px;color:var(--ink);line-height:1.75}
+.vn{font-size:12.5px;color:var(--ink3);line-height:1.75;margin-top:4px;padding-left:9px;border-left:2px solid var(--rule)}
+.vfoot{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:8px;font-size:11px;color:var(--ink3);gap:10px;
+}
+.vbtn{
+  font:inherit;font-size:11px;padding:4px 10px;cursor:pointer;white-space:nowrap;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vbtn:active{background:var(--paper2)}
+.vempty{padding:26px 0;font-size:13px;color:var(--ink3);text-align:center}
+
+.vacts{display:flex;gap:10px;margin:14px 0 10px;flex-wrap:wrap}
+.vact{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vact.dim{color:var(--ink3)}
+.vcode{
+  display:none;width:100%;font:12px/1.6 var(--sans);padding:10px;
+  background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);
+  border-radius:2px;resize:vertical;
+}
+.vhint{font-size:11.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.vrule .vr{
+  font-size:13px;color:var(--ink2);line-height:1.8;
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+}
+.vrule .vr b{color:var(--ink)}
+.vrule .vr.dim{color:var(--ink3);font-size:12px}
+
+/* ---------- 新手向新体裁组件（2026-10-28 增）
+   四段式：账面 → 拆一条 → 明天看什么 → 今天该懂的一个词
+   共同点：每个数字后面必须跟一句「所以呢」，即 .ba 锚点句 */
+
+/* 账面表：左列名称，右列数值 + 锚点句 */
+table.board{width:100%;border-collapse:collapse;font-size:14.5px;table-layout:fixed}
+table.board th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:left;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.board td{padding:11px 0;border-bottom:1px solid var(--rule2);vertical-align:top}
+table.board tr:last-child td{border-bottom:1px solid var(--rule)}
+table.board td:first-child{
+  width:31%;color:var(--ink);padding-right:12px;line-height:1.6;
+}
+table.board .bv{
+  font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.35;
+  display:block;letter-spacing:.01em;
+}
+table.board .ba{
+  display:block;font-size:12.5px;color:var(--ink3);line-height:1.68;margin-top:3px;
+}
+table.board .ba b,table.board .ba strong{color:var(--ink2);font-weight:600}
+
+/* 拆一条：四步骨架 */
+.story-h{
+  font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.5;
+  margin:0 0 16px;letter-spacing:.01em;
+}
+.q{border-left:2px solid var(--rule);padding-left:15px}
+.q .step{margin-bottom:20px}
+.q .step:last-child{margin-bottom:0}
+.q .lbl{
+  display:block;font-size:10.5px;letter-spacing:.16em;color:var(--accent);
+  font-weight:700;margin-bottom:5px;
+}
+.q .step p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0}
+.q .step p strong{color:var(--ink);font-weight:600}
+
+/* 明天看什么 */
+ul.sig{list-style:none;padding:0;margin:0}
+ul.sig li{padding:13px 0;border-bottom:1px solid var(--rule2)}
+ul.sig li:last-child{border-bottom:none}
+ul.sig .t{
+  display:block;font-family:var(--serif);font-size:15.5px;font-weight:700;
+  color:var(--ink);margin-bottom:5px;
+}
+ul.sig .b{font-size:14.5px;line-height:1.8;color:var(--ink2)}
+ul.sig .b em{font-style:normal;color:var(--ink);font-weight:600;
+  border-bottom:1px solid rgba(142,47,34,.4)}
+
+/* 今天该懂的一个词 */
+.word{background:var(--paper3);border:1px solid var(--rule2);padding:16px 16px 6px}
+.word .w{
+  font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);
+  margin:0 0 12px;line-height:1.4;
+}
+.word .w small{
+  display:block;font-family:var(--sans);font-size:11px;font-weight:400;
+  color:var(--ink3);letter-spacing:.08em;margin-top:3px;
+}
+.word p{font-size:14.5px;line-height:1.85;color:var(--ink2);margin:0 0 12px}
+.word p strong{color:var(--ink);font-weight:600}
+
+</style>
+</head><body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="org">Personal Research Desk</div>
+    <div class="name">投研日报</div>
+    <div class="sub">早报 · 晚报 · 周报　｜　新闻框架，不做预测</div>
+  </div>
+  <div class="rule-double"></div>
+  <div class="metabar">
+    <span>2026-11-01　周报　第 1 期 · 周报（覆盖 10-26 至 10-30 五个交易日）</span>
+    <span>A 股与中债为 10-30 收盘；美股为 10-30 收盘；美债为 10-29 纽约尾盘 4.937%</span>
+  </div>
+
+  <div class="lead">
+    <div class="kicker">本周主线 · 定价的变量换了人</div>
+    <h1 class="headline">这周砸 A 股的不是利率，是谷歌少花的那 44 亿美元</h1>
+    <p class="standfirst"><span class="term" data-t="沪深300">沪深300</span> 一周跌 2.88%，100 块变 97.12 块；<span class="term" data-t="创业板">创业板</span>跌 8.51%，100 块变 91.49 块。但跌得最狠的周四、周五，十年期<span class="term" data-t="美债收益率">美债收益率</span>反而从 5.022% 回落到 4.937%——<strong>钱没变贵，是「AI 的账本」被重新算了一遍</strong>。我判断这一周市场定价的变量从利率换成了<span class="term" data-t="资本开支">资本开支</span>：不再问 AI 卖不卖得动，开始问这些钱谁付、什么时候回本。</p>
+  </div>
+
+  <section><div class='sec-head'><span class='sec-num'>01</span><h2>价格轨迹</h2></div><div class='sec-note'>沪深300 近 60 个交易日。这条线不是一次跳水，是一个多月的<span class="term" data-t="估值">估值</span>收缩，本周只占其中一段：收 3,985.50 点，比过去 250 天的最高点低 21.3%——从最高点买进 100 块，现在剩 78.7 块。周内跌 2.88%，100 块变 97.12 块。</div><svg viewBox="0 0 300 54" width="100%" height="54" preserveAspectRatio="none" style="display:block;margin:10px 0 2px"><polyline points="0.0,12.7 5.1,15.6 10.2,11.9 15.3,8.3 20.3,8.7 25.4,6.0 30.5,5.5 35.6,7.9 40.7,6.2 45.8,7.9 50.8,7.8 55.9,3.0 61.0,4.0 66.1,12.7 71.2,12.4 76.3,10.8 81.4,14.3 86.4,15.0 91.5,12.5 96.6,10.0 101.7,11.4 106.8,10.4 111.9,11.2 116.9,15.3 122.0,15.0 127.1,15.3 132.2,13.6 137.3,14.6 142.4,13.7 147.5,15.2 152.5,17.7 157.6,19.6 162.7,21.5 167.8,19.6 172.9,20.8 178.0,17.8 183.1,15.8 188.1,15.5 193.2,17.2 198.3,22.2 203.4,28.4 208.5,28.1 213.6,27.4 218.6,30.4 223.7,29.9 228.8,31.8 233.9,32.6 239.0,36.3 244.1,39.5 249.2,39.2 254.2,39.0 259.3,40.4 264.4,43.0 269.5,47.8 274.6,43.4 279.7,43.5 284.7,46.9 289.8,44.8 294.9,47.4 300.0,51.0" fill="none" stroke="var(--ink2)" stroke-width="1.4"/></svg><div class='sec-note'>沪深300 近 60 个交易日　收盘 3985.50　距 250 日高点 -21.3%　20 日涨跌 -10.22%</div></section>
+<section><div class='sec-head'><span class='sec-num'>02</span><h2>本周主线：定价的变量，从利率换成了预算表</h2></div><div class='sec-note'>一周只有一条主线。找得出这条，说明想清楚了；找不出，就该直接说找不出。</div><h3 class='story-h'><span class="term" data-t="谷歌">谷歌</span>少花 44 亿美元，A 股最贵的<span class="term" data-t="板块">板块</span>两天跌掉 13.6%</h3><div class='q'><div class='step'><span class='lbl'>发生了什么</span><p>10 月 30 日收盘，沪深300 报 3,985.50 点，一周跌 2.88%；<span class="term" data-t="创业板指">创业板指</span> 2,413.63 点，一周跌 8.51%；<span class="term" data-t="科创50">科创50</span> 1,160.84 点，一周跌 11.76%；<span class="term" data-t="上证50">上证50</span> 只跌 0.97%。跌得最集中的是<span class="term" data-t="通信">通信</span>：10-29 跌 7.56%、10-30 再跌 6.48%，两天 100 块变 86.4 块。而正是这两天，<span class="term" data-t="十年期美债">十年期美债</span>收益率从 5.022% 落到 4.937%——5.022% 是这轮周期第一次收在 5% 上方，回落到 4.937% 这 8.5 个<span class="term" data-t="基点">基点</span>，按长债价格算约等于涨 0.7%。按「利率决定估值」的老逻辑，这两天该是反弹的日子。</p></div><div class='step'><span class='lbl'>为什么会这样</span><p>三跳。<br><br>第一跳，10-29 凌晨谷歌交出<span class="term" data-t="三季报">三季报</span>：一个季度花在设备与机房上的钱是 514 亿美元，比市场预期的 558 亿少 44 亿；单季<span class="term" data-t="自由现金流">自由现金流</span> −91 亿美元，连续第二个季度为负；长期债务从 216 亿升到 1,251 亿美元。营收同比还涨 25%，只是没到预期——所以问题不在卖不动，在花得多、而花出去的钱还没换回收入。<br><br>第二跳，这 44 亿怎么落到 A 股。因为<span class="term" data-t="光模块">光模块</span>、<span class="term" data-t="覆铜板">覆铜板</span>、<span class="term" data-t="存储">存储</span>的客户就是北美那几家<span class="term" data-t="云厂">云厂</span>，它们一年买多少<span class="term" data-t="服务器">服务器</span>、建多少机房，决定这条链明年开多少工。所以资本开支少 44 亿不是一句评价，是把明年订单的天花板往下挪一格。<br><br>第三跳，为什么一格能砸出 7.56%。科创50 <span class="term" data-t="市盈率">市盈率</span> 90.37 倍，意思按现在的赚钱速度要 90 年回本——这种价格里没有「少赚一点」的位置，只有「故事还成不成立」。所以先被杀的是最贵的那一段：10-29 那天上证50 还涨 0.36%，同一句话落不到 11 倍市盈率的地方。</p></div><div class='step'><span class='lbl'>这跟你有什么关系</span><p><strong>如果你没持有<span class="term" data-t="算力">算力</span>链：</strong>这周账户只跌 2%–3%，你其实跑赢了——创业板跌 8.51%，你只要没把钱压在「明年的订单」上，跌幅大概率比它小。<br><br><strong>如果你已经持有：</strong>差距在<span class="term" data-t="基金">基金</span>层面就看得出来。10-30 单日，易方达沪深300 联接 −1.31%，交银<span class="term" data-t="红利低波">红利低波</span> +0.93%；<span class="term" data-t="纳斯达克">纳斯达克</span>100 联接 10-29 −1.33%。这周决定损益的不是「你信不信 AI」，是<span class="term" data-t="仓位">仓位</span>里有多少钱押在那张预算表上。<br><br><strong>如果你两边都没有：</strong>这周真正值得记住的不是谁跌了多少，是同一份事实——AI 的需求很强——两天之内被两股力推向相反方向。先看清哪股力在定价，再决定要不要动，比猜底有用。</p></div><div class='step'><span class='lbl'>什么情况下这条会错</span><p>两条。<br><br>一是 11 月起北美云厂陆续给的明年资本开支指引往上调——那说明谷歌只是自己收手，这周是错杀，验证信号是<span class="term" data-t="通信设备">通信设备</span>三个交易日内收回 10-29 那根阴线的一半（4.5%）。<br><br>二是十年期<span class="term" data-t="美债">美债</span>重新上破 5.1%，同时 A 股跌幅又回到「按市盈率整齐排开」的样子——那定价的变量又回到利率，这条主线当场作废。</p></div></div></section>
+<section><div class='sec-head'><span class='sec-num'>03</span><h2>它怎么演变：五天的因果链</h2></div><div class='sec-note'>把碎片排成一条线。转折点在周四，标出来了。</div><div class='layer'><h3>周二（10-27）：先跌，但没有一条坏消息</h3><p>科创50 −4.81%、创业板 −3.41%、沪深300 −1.32%，31 个行业只有银行上涨，4,922 只跌、606 只涨——随便抽一只，八分之七是绿的。成交 1.46 万亿，是 20 日均量的 0.92 倍。跌幅按市盈率从高到低排开——90 倍跌 4.81%，11 倍跌 0.80%。这一天的定价变量确实是利率：美债 4.98% 压在上面，谁的现金流在更远的将来，谁跌得更多。</p></div><div class='layer'><h3>周三（10-28）：需求被一份财报证实，反弹一天</h3><p><span class="term" data-t="SK海力士">SK海力士</span>三季报营业利润同比 +632%，并说 2027–2028 年一半以上产能已被长协锁掉；当晚纳斯达克 +1.18%、费城半导体 +3.60%。A 股创业板 +3.40%、通信 +5.01%，昨天唯一收红的银行转跌 0.58%。成交 1.63 万亿（1.05 倍），刚过线。这一天证明「AI 卖得动」这个变量还在，而且是硬数据——所以钱又从银行搬了回去。</p></div><div class='layer'><h3>周四（10-29）：转折点——问法从「卖得动吗」变成「谁付钱」</h3><p>谷歌资本开支 514 亿低于预期 558 亿、自由现金流 −91 亿、长期债务 1,251 亿。当日通信 −7.56%、<span class="term" data-t="电子">电子</span> −5.47%、创业板 −4.45%，而银行 +1.97%、<span class="term" data-t="煤炭">煤炭</span> +2.21%，工行 8.78 元、建行 12.04 元创历史新高，工农中建总<span class="term" data-t="市值">市值</span>第一次过 10 万亿元。<strong>要紧的是同一天美债收在 5.022%——利率在往上走，上证50 却还涨 0.36%。</strong>所以这天的跌不是「钱贵了」，是「生意被重算了」。</p></div><div class='layer'><h3>周五（10-30）：连最差的业绩都被买，说明钱在换地方</h3><p>白酒三季报是近年最差——<span class="term" data-t="五粮液">五粮液</span>、<span class="term" data-t="泸州老窖">泸州老窖</span>单季收入同比 −37%，洋河 −61%——股价却<span class="term" data-t="涨停">涨停</span>一片，<span class="term" data-t="食品饮料">食品饮料</span> +2.84% 居 31 个行业首位，泸州老窖<span class="term" data-t="股息率">股息率</span> 8.24%。同日科创50 −5.48%、通信 −6.48%，成交 1.67 万亿（1.06 倍）<span class="term" data-t="放量下跌">放量下跌</span>，893 只涨、4,602 只跌。<span class="term" data-t="十年期国债">十年期国债</span>也被卖：上行 2.3 个基点到 1.634%，30 年期<span class="term" data-t="国债期货">国债期货</span> −0.94%，3 月以来最大单日跌幅。钱没离场，它在从「以后赚」搬到「现在拿」。</p></div><div class='layer'><h3>周末回看（10-30 美股收盘）：这不是 A 股自己的情绪</h3><p><span class="term" data-t="纳指">纳指</span> −2.86%、<span class="term" data-t="标普500">标普500</span> −1.82%、<span class="term" data-t="道指">道指</span> −1.09%，<span class="term" data-t="亚马逊">亚马逊</span>与<span class="term" data-t="英特尔">英特尔</span> 10-29 盘后的利空还在定价。同一条账本，两边一起算——所以周五那根阴线不该读成 A 股特有的问题。</p></div><div class='layer'><h3>全周贯穿：宏观利率这条轴，这周没帮上忙</h3><p>把两个利率市场放一起看，会发现它们解释不了这周<span class="term" data-t="股票">股票</span>。中债十年期在 1.609%–1.634% 之间来回：10-27 探到 1.615% 的年内低点，10-29 再创 1.609%，10-30 又上行 2.3 个基点回到 1.634%——整周<span class="term" data-t="区间">区间</span>宽度只有 2.5 个基点，相当于 100 万元长债的价格上下浮动 2 千块左右，属日常波动。美债十年期则是 5.022% 冲到本轮最高、两天后回到 4.937%，回落 8.5 个基点。<br><br>两边都没有单边方向，而沪深300 一周跌 2.88%——按「利率决定估值」的框架，利率横着走，估值就不该动这么多。我判断<span class="term" data-t="宏观利率">宏观利率</span>这一层本周从「原因」退成了「背景」：它决定估值的天花板在哪，不决定天花板底下这几天怎么排座位。这也解释了周一那套「按市盈率排开」的解释到周四为什么失灵——排序还在，推着它走的力换了人。</p></div></section>
+<section><div class='sec-head'><span class='sec-num'>04</span><h2>预判复盘</h2></div><div class='gauges'><div class='gauge'><div class='g-label'>已结案</div><div class='g-val'>76</div></div><div class='gauge'><div class='g-label'>命中</div><div class='g-val'>40</div></div><div class='gauge'><div class='g-label'>部分命中</div><div class='g-val'>30</div></div><div class='gauge'><div class='g-label'>未中</div><div class='g-val'>6</div></div><div class='gauge'><div class='g-label'>未结案</div><div class='g-val'>80</div></div><div class='gauge'><div class='g-label'>命中率</div><div class='g-val'>53%</div></div></div><div class='sec-note'>只统计先写进台账、后到期验证的事件，事后补记的一律不算，同一件事写了两次记录的只结案一次。严格命中 7 条／已结案 20 条＝35%；另有 9 条部分命中，方向对、幅度或持续性不对，不计入分子。这周错得最典型的一条在 10-29 早报：我说美债回落该利好成长股，当天通信跌 7.56%——同一个价格信号，换成另一个原因，含义会反过来。先确认是谁在定价，再谈方向。</div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>伊朗冲突阶段性缓和，但11月中期选举后可能反复</span></div><p class='trace-note'>缓和路径兑现：伊朗最高领袖授权政府谈判、伊方把「七日方案」压成「两日计划」，11-02 布伦特 -7.63% 收 104.77、WTI 回到 100 下方；「中期选举后可能反复」的尾部风险留待 11-03 投票后验证</p><div class='trace-id'>E20261026-03　2026-10-26</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>霍尔木兹航运安全与沙特油田、机场遇袭</span></div><p class='trace-note'>供给风险落地：10-30 霍尔木兹油轮起火推动布伦特创六个月新高，近月溢价升至历史高位区间</p><div class='trace-id'>E20261026-04　2026-10-26</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>原油回落：WTI 12月合约跌1.83%报99.90美元，布伦特跌1.67%报113.88美元</span></div><p class='trace-note'>10-28 的回落未延续：10-30 WTI 回到 104.12、布伦特 117.64，两周内由回落转为连涨</p><div class='trace-id'>E20261028-06　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>油价回落：WTI 12 月 102.00 美元（-0.76%）、布伦特 114.88 美元（-0.38%），万斯致信伊朗高层推动复谈</span></div><p class='trace-note'>降温交易被推翻：10-30 霍尔木兹四艘油轮起火、俄炼厂遭袭，布伦特 117.64（+2.4%）创 4-29 以来收盘新高、连涨六周</p><div class='trace-id'>E20261030-07　2026-10-30</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>债市大幅回调：10Y 国债上行 2.3BP 报 1.634%，30 年国债期货 -0.94% 创 3 月以来最大单日跌幅</span></div><p class='trace-note'>债市一日脉冲后修复：11-02 30Y 回到 2.079%、10Y 1.6275%，30 年国债期货 +0.31%；信用事件冲击未形成趋势转折</p><div class='trace-id'>E20261030-10　2026-10-30</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>11-02 9:00 央行、证监会、金融监管总局召集银行与基金公司座谈，议题为优化股票回购增持再贷款与资本市场支持工具</span></div><p class='trace-note'>会议当日落地并给出可执行条款：再贷款利率 1.25%→1%、转长期制度、第三批 31 家超 1,000 亿元。早报担心的「只表态不给数字」未发生</p><div class='trace-id'>E20261102-04　2026-11-02</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>政策利率换锚今日落地：隔夜逆回购（1.25%）取代 7 天逆回购（1.40%）成为主要政策利率</span></div><p class='trace-note'>换锚首日平稳：DR001 1.28% 贴住 1.25%，净回笼 5,150 亿未推高资金价格，10Y 仅 +0.35BP</p><div class='trace-id'>E20261102-05　2026-11-02</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美债 10-30：10Y 4.9289%（-0.8BP），10 月累跌 35.60BP；股市重挫但避险买盘有限</span></div><p class='trace-note'>11-02 纽约尾盘 10Y 4.9125%（-1.64BP）、2Y 4.5895%（+0.20BP）、30Y 5.2815%（-2.67BP）：避险买盘依旧有限，长端只随油跌小幅下行 1.64BP，短端被加息定价钉住、反涨 0.20BP</p><div class='trace-id'>E20261102-06　2026-11-02</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>油涨金跌背离：布伦特 117.64 美元（+2.40%）创 4-29 以来收盘新高，黄金期货 3,898.9 美元（-3.29%）创一年新低</span></div><p class='trace-note'>背离当日成立（10-30 布伦特 +2.40%/黄金期货 -3.29%），但次日即反转：11-02 布伦特 -7.63%、现货金 +1.85%、白银 +2.91%。背离是事件脉冲，不是趋势</p><div class='trace-id'>E20261102-07　2026-11-02</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>美伊谈判出现实质信号，国际油价一夜暴跌：布伦特 -7.63% 收 104.77、WTI -7.36% 收 96.46</span></div><p class='trace-note'>11-03 未续跌：WTI 12 月 96.09（-0.38%）、布伦特 1 月 103.60（-1.12%），两日横盘，既没破 100 也没收回 105；退保是一次性出清，不是趋势</p><div class='trace-id'>E20261103-01　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美股 11-02 涨跌不一：道指 +0.41%、标普 -0.51%、纳指 -1.07%，AI 硬件链再度重挫</span></div><p class='trace-note'>11-03 费半 +2.64%、30 只成分股全涨、纳指 +0.83%，前一日 -3.37% 的超跌被打回，AI 硬件链重挫属单日宣泄</p><div class='trace-id'>E20261103-02　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美债 11-02：10Y 4.9125%（-1.64BP）、2Y 4.5895%（+0.20BP），长端随油跌小幅下行、短端钉住加息定价</span></div><p class='trace-note'>11-03 10Y 反手 +5.16BP 报 4.964%、2Y +3.31BP，长端随油跌下行只维持一天，JOLTS 超预期后全曲线走高</p><div class='trace-id'>E20261103-03　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>黄金从一年最低反弹：现货 3,947.17 美元（+1.85%），白银重回 50 美元上方</span></div><p class='trace-note'>反弹只维持一天：11-03 纽约尾盘现货黄金 -0.42% 报 3,930 美元，11-02 的 +1.85% 未延续</p><div class='trace-id'>E20261103-04　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>第三次互换便利（SFISF）今日招标：31 家券商基金申报超 1,000 亿元，期限 1 年可展期</span></div><p class='trace-note'>11-03 落地：1,000 亿元、31 家投标、中标费率 10BP，单次规模创设立以来最大。申报『超 1,000 亿』→『中标 1,000 亿』基本足额；但费率未如预期『低于 10BP』，维持 10BP。</p><div class='trace-id'>E20261103-05　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美国中期选举今日（11-03）投票，改选全部众议院席位与约三分之一参议院席位</span></div><p class='trace-note'>11-04 结果明朗：民主党夺回参众两院（众院 228、参院 54，美联社口径），市场当日道指 +3.03%</p><div class='trace-id'>E20261103-06　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>央行完成第三次互换便利（SFISF）：1,000 亿元、31 家投标、中标费率 10BP，单次规模创设立以来最大</span></div><p class='trace-note'>额度与费率兑现（1,000 亿、31 家、10BP），但当日没托住板块：通信 -6.83%、中际旭创 -12.69%，1,000 亿换不来这条链的方向；次日反弹归因于选举出清，政策钱的贡献拆不开。</p><div class='trace-id'>E20261103-07　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>迈威尔以 1,150 亿美元全股票收购 Lumentum，光模块上游 DSP 与激光器合并为一家</span></div><p class='trace-note'>光模块连续三日跑输：11-05 中际旭创 -7.51%、新易盛 -5.54%、联讯仪器 -10.07%，中际旭创 20 日 -36.90%。但当日直接触发是北美数据中心审批而非上游合并，议价权压力属背景变量</p><div class='trace-id'>E20261103-09　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>两市缩量回调：成交 1.70 万亿（-803 亿），涨跌 2,108:3,309，涨停 52 家</span></div><p class='trace-note'>11-03 收盘确认：成交 1.70 万亿、涨跌 2,108:3,309、涨停 52 家，缩量分化成立</p><div class='trace-id'>E20261103-10　2026-11-03</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美国中期选举 11-03 投票，计票自北京时间 11-04 凌晨起陆续揭晓；选前预测民主党夺众院概率 84%</span></div><p class='trace-note'>民主党夺回参众两院，美联社口径众院过 218、参院至少 51；计票在投票日后一日内明朗，快于 2022 年（参院 4 天、众院 8 天）</p><div class='trace-id'>E20261104-04　2026-11-04</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>今日 09:45 财新服务业 PMI（前值 51.6、预期 51.7）；23:00 美国 ISM 非制造业（前值 54.9、预期 54.8）</span></div><p class='trace-note'>ISM 非制造业 10 月 54.5，低于预期 54.8 与前值 54.9；财新服务业 PMI 无可靠公开口径（已在上期对账承认不可观测）</p><div class='trace-id'>E20261104-08　2026-11-04</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>A 股放量暴涨：上证 +2.16% 报 3,686.17，科创50 +9.92%、创业板 +6.40%，成交 20,377 亿，4,667 涨 779 跌</span></div><p class='trace-note'>量能只守住一天：11-05 成交 21,180 亿（续守 2 万亿），11-06 掉到 16,578 亿（-4,602 亿、20 日均量 0.96 倍）。放量普涨成立，但「新钱进场」未延续，11-06 且为缩量下跌。</p><div class='trace-id'>E20261104-10　2026-11-04</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美国中期选举：民主党夺回参众两院，众院已过 218 席门槛、参院至少 51 席</span></div><p class='trace-note'>次日即被市场分成两条腿：11-05 光伏设备 +8%、十余只涨停，同日光模块 -5%~-10%（中际旭创 -7.51%、联讯仪器 -10.07%）。同一份选举结果对补贴与审批两个方向同时定价，判断成立。</p><div class='trace-id'>E20261104-12　2026-11-04</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>美股 11-04 大涨：道指 +3.03% 报 53,356.12（+1,569 点），标普 +1.58%、纳指 +1.44%</span></div><p class='trace-note'>指数层面出清成立（道指 +3.03%），但最依赖政策的那条链同夜反向：费半 -3.13%，11-06 再 -12.25%。「不确定性出清」没惠及 AI 硬件，方向只对一半。</p><div class='trace-id'>E20261105-01　2026-11-05</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>费城半导体指数 -3.13% 报 10,268.65：30 只成分股 4 涨 26 跌，存储与光通信重挫</span></div><p class='trace-note'>同一变量次日放大三倍：11-06 费半 -12.25% 报 9,011.14（2020-03 以来最大单日），闪迪 -22.26%、美光 -17.46%、Lumentum -18.68%，A 股通信 -4.93%、电子 -3.90%。「机房能不能盖」的定价成立，且从地方公投升级为整条链重估。</p><div class='trace-id'>E20261105-02　2026-11-05</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>油价暴跌：WTI 12 月 88.12 美元（-8.29%）、布伦特 1 月 94.62 美元（-8.67%），布油跌破 100</span></div><p class='trace-note'>11-05 WTI 反弹 +2.72% 报 90.52 美元，只填回前一日 -8.29% 跌幅的一小半，未收复 96 美元，属技术性反弹而非趋势反转</p><div class='trace-id'>E20261105-04　2026-11-05</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>AI 硬件分家：光模块三剑客 -5%~-10%，半导体设备同日 +5.83%</span></div><p class='trace-note'>11-05 夜盘海外复现同一条分界线：云厂微软 -3.58%、亚马逊 -2.19%，卖铲子的存储/光模块 -16%~-22%、费半 -12.25%，『客户在哪』仍是唯一解释变量</p><div class='trace-id'>E20261105-11　2026-11-05</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>10Y 国债 1.5910%（-0.4BP）再创 2025-01 以来最低，30Y 2.0510% 上行，曲线走平</span></div><p class='trace-note'>11-06 再下一台阶：10Y 1.5685% 创历史新低（-2BP）、30Y 2.032% 同步至 2025-08-26 以来新低，曲线整体下移而非走平。钱继续往「确定」里躲，判断成立。</p><div class='trace-id'>E20261105-12　2026-11-05</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>费城半导体指数 -12.25% 报 9,011.14，2020 年 3 月以来最大单日跌幅；卖铲子的跌 16%~22%，云厂只跌 2%~4%</span></div><p class='trace-note'>次日费半 +4.2%、AMD +11% 收回三分之一跌幅，但周线仍重挫、卖铲子的 16%~22% 杀估值未修复</p><div class='trace-id'>E20261106-02　2026-11-06</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美债 11-05 避险抢购：10Y 4.8326%（-5.53BP）、2Y 4.4520%（-12.48BP），2/10 利差扩至 38BP</span></div><p class='trace-note'>避险买盘一日即回吐：11-06 非农后 10Y +2.27BP、2Y +4.92BP，2/10 利差由 38.06BP 收窄至 34.59BP</p><div class='trace-id'>E20261106-03　2026-11-06</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>油价超跌反弹：WTI 90.52 美元（+2.72%）、布伦特 98.29 美元（+3.88%），因霍尔木兹海峡油轮触雷起火</span></div><p class='trace-note'>11-06 仅微涨 0.03%~0.34%，两连涨但涨幅收敛，布伦特 98.32 未站回 100</p><div class='trace-id'>E20261106-05　2026-11-06</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>10 年期国债收益率 1.5685% 创历史新低（-2BP），30Y 2.032% 创 2025-08-26 以来新低</span></div><p class='trace-note'>历史新低只站住一个交易日：11-09 回到 1.5735%（+0.5BP），30Y 2.017%（-0.65BP）。PPI 从 5.0% 升到 5.7% 没能把债推上去，说明当下定价债的是资金面而非通胀（今日净回笼 440 亿、Shibor 隔夜 1.314%）</p><div class='trace-id'>E20261106-09　2026-11-06</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>算力硬件集体回调，午间十余家龙头集中披露回购/经营正常公告，未能复刻 10-23 反攻</span></div><p class='trace-note'>11-09 算力链转红（通信 +1.11%、电子 +0.85%、费半 +6.85%），回调结束；但没有复刻 10-23 的放量反攻——成交仅 14,826 亿、20 日均量 0.88 倍</p><div class='trace-id'>E20261106-11　2026-11-06</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美国10月非农新增16.5万（预期6.5万），失业率4.1%，12月加息概率升至78%</span></div><p class='trace-note'>11-10 沃勒伦敦讲话后，市场完全计入 12 月加息 25BP（此前 78%），并有 50BP 的第二档情形；路径判断兑现。</p><div class='trace-id'>E20261109-01　2026-11-09</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美股 11-06 分化反弹：纳指 +1.09%、费半 +4.2%、AMD +11%，但纳指连续第四周下跌</span></div><p class='trace-note'>反弹延续：11-09 纳指 +2.74% 报 25,253.14、费半 +6.85%，收复上周大部分跌幅；但仍未创阶段新高</p><div class='trace-id'>E20261109-03　2026-11-09</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>黄金回落、原油两连涨但幅度极小：伦敦金 4,069.63（-0.43%）、WTI 90.83（+0.34%）</span></div><p class='trace-note'>连涨两日后 11-09 转向：WTI -4.38% 报 86.85、布伦特 -5.85% 报 92.57；金从 4,069.63 回到 4,144.42（+1.81%），「涨幅收敛」的读法成立</p><div class='trace-id'>E20261109-05　2026-11-09</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>今日 09:30 中国 10 月 CPI/PPI；11-10 21:30 美国 10 月 CPI；11-15 外汇存准率上调生效</span></div><p class='trace-note'>如期 09:30 落地：CPI 同比 0.7%（低于预期）、PPI 同比 5.7%（高于预期），日历项本身无预测，按「事件已发生」结案</p><div class='trace-id'>E20261109-06　2026-11-09</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>煤炭 +2.74% 居申万 31 行业首位，郑州煤电等 3 只涨停；寒潮蓝色预警 06 时发布、18 时解除</span></div><p class='trace-note'>寒潮 11-09 18 时解除后，11-10 煤炭 -1.50%、石油石化 -2.43% 双双垫底，供暖日耗与油价两条支撑同时撤走。</p><div class='trace-id'>E20261109-09　2026-11-09</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>美股 11-09 暴力反弹：道指 +2.15%、纳指 +2.74%、标普 +2.35%、费半 +6.85%，英伟达逆势 -4.22% 创近七个月收盘新低</span></div><p class='trace-note'>11-09 的暴力反弹只维持一天：11-10 道指 -0.30%、标普 -0.38%、纳指 -0.74%，标普科技板块 -1.4% 为 11 个板块最差</p><div class='trace-id'>E20261110-01　2026-11-10</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>油价一夜大跌：WTI 12 月合约 -4.38% 报 86.85、布伦特 1 月 -5.85% 报 92.57；特朗普称若谈判有进展美「极不可能」重返对伊战争</span></div><p class='trace-note'>油价延续下跌：11-10 布伦特收 92.07（-0.54%）、盘中一度跌破 90 美元为 8 月以来首次；WTI 86.44（-0.47%）</p><div class='trace-id'>E20261110-02　2026-11-10</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>今日 21:30 美国 10 月 CPI 仅出月率（预期 0.30%、前值 0.60%）；中国 10 月贸易帐待定公布</span></div><p class='trace-note'>美国 10 月 CPI 环比 +0.4%（预期 0.3%）、核心 +0.3%（预期 0.2%），双双超预期；因去年停摆缺采价，仅发环比无同比</p><div class='trace-id'>E20261110-05　2026-11-10</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>沃勒伦敦讲话划死 12 月加息阈值：倾向 25BP，核心 CPI 环比 ≥0.3% 应考虑 50BP；市场完全定价 12 月 25BP</span></div><p class='trace-note'>核心 CPI 站在 0.3%，正好踩到沃勒划的 50BP 触发线；CME FedWatch 显示 50BP 押注从数据前为零升至约一成</p><div class='trace-id'>E20261110-11　2026-11-10</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>美国 10 月 CPI 环比 +0.4%（预期 0.3%）、核心 +0.3%（预期 0.2%），连续第三个月环比达或超 0.4%</span></div><p class='trace-note'>10Y 期货隐含重开后升破 5%，CPI 余波仍在利率里；但 11-11 现券休市，无收盘读数可判定</p><div class='trace-id'>E20261111-01　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>英伟达及黄仁勋遭股东集体诉讼（罗森律所，指涉嫌欺诈）；英伟达两日跌 9.6%</span></div><p class='trace-note'>同日 A 股算力链反涨（申万通信 +7.99%、通信设备 +9.99%），费半仅 -0.4%——「杀个股不杀板块」的判断被美、中两侧同时印证</p><div class='trace-id'>E20261111-04　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>布伦特盘中跌破 90 美元（8 月以来首次）、收 92.07（-0.54%）；WTI 86.44（-0.47%）；伊朗否认与美谈判</span></div><p class='trace-note'>11-11 布伦特 1 月合约收 92.76（+1.39%），收回 92 上方，T-GEO 的「收盘站不回 92 即下行确认」条件未触发</p><div class='trace-id'>E20261111-06　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>现货黄金 11-10 跌 2.61% 收 4,032.73 美元；美元指数走强，白银同步承压</span></div><p class='trace-note'>11-11 亚欧盘 4,039.24（+0.16%），未测试 4,000 关口；美元走强的压制还在，但没传导成破位</p><div class='trace-id'>E20261111-07　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>算力硬件单日暴涨：申万通信 +7.99%、通信设备 +9.99%（91 只 83 涨、7 涨停，成交 1,381.19 亿），中际旭创 +15.07%/542.00 成交 312.29 亿居首</span></div><p class='trace-note'>11-12 通信早盘 +3% 后收 −3.01%，日内反转 6 个百分点、CPO 三只全跌；单日暴涨没有第二天承接，判 partial</p><div class='trace-id'>E20261111-09　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>高低切换：上证50 −0.27% 对创业板指 +3.11%，差 3.38 个百分点；食品饮料 −2.22% 垫底、银行尾盘转跌</span></div><p class='trace-note'>11-12 反向切换：上证50 +0.24% 对创业板指 −2.44%，差 2.68 个百分点；高低切换成立但方向不延续，判 partial</p><div class='trace-id'>E20261111-10　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>债市延续偏弱：10Y 国债 1.591%（+0.75BP）、30Y 2.039%（+0.85BP），30 年期货 −0.43%；央行净回笼 30 亿</span></div><p class='trace-note'>11-12 债市由弱转稳：国债期货多数收涨（10Y +0.05%、30Y −0.08%），10Y 换券后 1.588%，央行净投放 1,970 亿；"延续偏弱"未延续，判 partial</p><div class='trace-id'>E20261111-11　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>央行发布 2026 年三季度货币政策执行报告：前三季度 GDP +4.6%、9 月末社融存量 +7.1%、M2 +7.2%；10 月金融数据截稿未出</span></div><p class='trace-note'>10 月数据落地：社融存量 469.16 万亿 +7.2%（9 月末 +7.1%，升 0.1pt）、M2 +7.1%（9 月末 +7.2%，降 0.1pt），与三季度报告口径衔接一致</p><div class='trace-id'>E20261111-12　2026-11-11</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>英伟达盘后一度跌 9%、收窄至 −8%：WSJ 称董事会正准备罢免黄仁勋，最快当日投票</span></div><p class='trace-note'>11-12 晚公告兑现：董事会已批准黄仁勋辞去总裁/CEO/董事，即刻生效，克雷斯任临时CEO；当日开盘一度跌 14%，收 −4.34%。传闻不只是传闻，且市场未按「路线图作废」定价。</p><div class='trace-id'>E20261112-01　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美债 11-11 因退伍军人节现券休市，10Y 冻结在 4.994%；10Y 期货隐含重开可能升破 5%</span></div><p class='trace-note'>休市后重开首日即升破 5%：10Y 收 5.133%（+13.51BP）、2Y 4.881%、30Y 5.457%，期货隐含的「重开升破 5%」兑现，且未停在 5.05% 附近。</p><div class='trace-id'>E20261112-04　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>油价反弹：WTI 12 月合约 86.53（+0.57%）、布伦特 1 月合约 92.76（+1.39%），布伦特收回 92 上方</span></div><p class='trace-note'>布伦特 11-12 收 95.82（+3.3%）、WTI 88.74（+2.55%），霍尔木兹多艘油轮遇袭；92 上方不仅站住，还向上突破，T-GEO 的「下行确认」条件反向作废。</p><div class='trace-id'>E20261112-06　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>A 股放量下跌：沪指 −0.67%/3,655.83，创业板指 −2.44%，成交 1.95 万亿</span></div><p class='trace-note'>11-12 收盘数据全部核实（沪指 −0.67%/3,655.83、创业板 −2.44%、成交沪深 19,320.8 亿）</p><div class='trace-id'>E20261112-09　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>通信日内反转 6 个百分点：早盘 +3%、收 −3.01%，CPO 三只全跌</span></div><p class='trace-note'>通信 11-12 早盘 +3%、收 −3.01%，反转 6 个百分点核实；13 日再跌 4.97%，反转确为退潮起点</p><div class='trace-id'>E20261112-10　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>央行净投放 1,970 亿、DR001 1.3255%；10Y 活跃券换券至 26附息国债12 报 1.588%</span></div><p class='trace-note'>净投放 1,970 亿与 DR001 1.3255% 核实；但「活跃券换至 26附息国债12」被推翻——11-13 新华与财联社均回到 26附息国债16，活跃券身份反复，跨日不可相减</p><div class='trace-id'>E20261112-11　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>10 月金融数据截稿未出（12–15 日窗口），二手报道自相矛盾不采用</span></div><p class='trace-note'>13 日央行原表已出，10 月单月新增社融 1.15 万亿；11-12 那篇二手稿的 M1 +6.2%/M2 +8.2% 确为错报，本期全部改用央行原表</p><div class='trace-id'>E20261112-12　2026-11-12</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>海外AI融资能力担忧发酵</span></div><p class='trace-note'>10-27 美股 AI 链反弹（纳指+1.18%、存储光通信涨 5-6%、甲骨文+3.56%），担忧未连续第二日发酵；A 股当日表现待 10-28 收盘验证</p><div class='trace-id'>E20261027-01　2026-10-27</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>下跌伴随缩量：沪市量能仅为20日均量的0.92倍</span></div><p class='trace-note'>次日成交放大至1.63万亿（20日均量1.05倍），缩量属观望而非出逃，判断成立</p><div class='trace-id'>E20261027-03　2026-10-27</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>资金转向防御：银行+1.23%，红利低波基金净值+0.10%</span></div><p class='trace-note'>防御只维持一个交易日：10-28 银行转跌0.58%、红利低波-0.34%，资金回流科技；避险成立但不可持续</p><div class='trace-id'>E20261027-04　2026-10-27</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>本周为海外主要央行议息窗口</span></div><p class='trace-note'>美联储 10-28 决议落地并维持不变，央行议息窗口结束</p><div class='trace-id'>E20261027-05　2026-10-27</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>10年期国债收益率降至1.615%，创年内新低；央行单日净投放1.014万亿元</span></div><p class='trace-note'>1.615%年内低点次日未被跌破，10-28回升至1.622%（+0.7BP），债市转入震荡磨底</p><div class='trace-id'>E20261028-01　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美联储10-28公布决议，维持利率不变概率92.8%，12月加息概率约75%</span></div><p class='trace-note'>维持 3.75%–4.00% 落地，10:2 表决；库克与哈马克主张加息 25BP，投票结构比结果更鹰</p><div class='trace-id'>E20261028-03　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>美债10年期4.9843%，连续三个交易日在5%关口下方窄幅震荡</span></div><p class='trace-note'>10-28 收 5.022%（+2.5BP），上破 5% 关口，「5% 下方窄幅震荡」的判断失效</p><div class='trace-id'>E20261028-04　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>A股放量普涨：上证+0.91%、创业板+3.40%，4154只上涨，成交1.63万亿</span></div><p class='trace-note'>10-29 全线回吐：创业板 -4.45%、成交缩至 1.56 万亿，「新钱进场」未成立</p><div class='trace-id'>E20261028-07　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>高低切换反转：银行-0.58%、食品饮料-1.46%，通信+5.01%、电子+3.97%</span></div><p class='trace-note'>只维持一个交易日：10-29 通信 -7.56%、电子 -5.47%，银行 +1.97%、煤炭 +2.21% 反向切回，高低切换未成趋势</p><div class='trace-id'>E20261028-08　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>SK海力士三季报营收104.62万亿韩元、营业利润83.33万亿韩元（同比+632%），存储景气获硬数据验证</span></div><p class='trace-note'>景气被证实（SK海力士营业利润同比 +632%、长协锁 2027-28 超 50% 产能），但未传导为股价：10-29/10-30 A 股存储与光模块两日暴跌，需求验证被资本开支预期覆盖</p><div class='trace-id'>E20261028-09　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>10年期国债回升至1.622%（+0.7BP），央行净投放缩至1,510亿，股债跷跷板反转</span></div><p class='trace-note'>10-29 10Y 回落 1BP 至 1.609% 创年内新低，跷跷板重回债市</p><div class='trace-id'>E20261028-10　2026-10-28</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>美联储维持联邦基金利率 3.75%–4.00%，10:2 表决，两名官员主张加息 25BP</span></div><p class='trace-note'>10:2 维持、两名主张加息 25BP 的鹰派投票结构成立；但 10Y 由 5.022% 两日内回落至 4.937%，鹰派定价未延续</p><div class='trace-id'>E20261029-01　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>10 年期美债收 5.022%（+2.5BP），本轮首次收在 5% 上方；2 年期 4.704%（-2.91BP）</span></div><p class='trace-note'>10Y 收在 5% 上方只维持一天：10-29 欧美时段回落至约 4.99%（-2BP），5% 关口未站稳；但 2Y 与 10Y 背离（短端下、长端上）的期限结构判断仍成立</p><div class='trace-id'>E20261029-02　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>亚太存储链共振：韩国 KOSPI 6,012.44（+6.63%）、日经 63,954.19（+1.08%）、恒指 23,094.83（+0.23%）</span></div><p class='trace-note'>亚太存储链共振仅维持一日，10-29 A 股存储与光模块领跌</p><div class='trace-id'>E20261029-05　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>谷歌三季报：营收与每股收益低于预期，资本开支 514 亿美元低于预期 558 亿，自由现金流 -91 亿美元</span></div><p class='trace-note'>10-30 谷歌收 283.82 美元、-12.64% 创上市最大单日跌幅；A 股通信连续两日垫底（-7.56%、-6.48%），capex 下修 44 亿被当作订单天花板下移定价，判断成立</p><div class='trace-id'>E20261029-07　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>A股科技链重挫：通信 -7.56%、电子 -5.47%，创业板 -4.45%，银行煤炭逆势，成交 1.56 万亿缩量 720 亿</span></div><p class='trace-note'>10-30 通信再 -6.48%、电子 -5.11%、科创50 -5.48%，连续第二日垫底；跌势未止，判断延续成立</p><div class='trace-id'>E20261029-08　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-miss'>未中</span><span class='trace-title'>10 年期国债收益率 1.609% 创年内新低（-1BP），30Y 2.053%；央行净投放 1,150 亿，DR001 1.28%</span></div><p class='trace-note'>10-30 10Y 上行 2.3BP 报 1.634%，30 年国债期货 -0.94% 创 3 月以来最大单日跌幅；“钱往利息里躲”只维持一个交易日</p><div class='trace-id'>E20261029-09　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-open'>部分</span><span class='trace-title'>四大行总市值首破 10 万亿元，工行 8.78 元、建行 12.04 元创历史新高；银行 +1.97%、煤炭 +2.21%</span></div><p class='trace-note'>大行新高只维持一天：10-30 未续创新高、上证50 -0.75%，避险资金停在高点后回落</p><div class='trace-id'>E20261029-10　2026-10-29</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>亚马逊、英特尔 10-29 盘后财报不及预期，盘后分别跌约 5%、20%</span></div><p class='trace-note'>10-30 美股开盘纳指盘中 -2.19%、标普 -1.12%，两家盘后利空在亚洲与欧美时段连续定价</p><div class='trace-id'>E20261030-06　2026-10-30</div></div><div class='trace-item'><div class='trace-top'><span class='verdict v-hit'>命中</span><span class='trace-title'>美股 10-30 开盘续跌：纳指盘中 -2.19%、标普 -1.12%，科技财报利空未消化</span></div><p class='trace-note'>以 10-30 收盘核验：纳指 -2.86%（25,437.00）、标普 -1.82%、道指 -1.09%，盘中 -2.19% 的方向被收盘确认并扩大</p><div class='trace-id'>E20261030-11　2026-10-30</div></div></section>
+<section><div class='sec-head'><span class='sec-num'>05</span><h2>下周验证点：出现什么，意味着什么</h2></div><div class='sec-note'>四个点，前两个能改写本周主线，后两个只影响你怎么理解它。</div><ul class='sig'><li><span class='t'>一、北美云厂的明年资本开支指引</span><div class='b'>这是唯一能推翻本周主线的事。<em>指引上调，说明谷歌只是自己收手，本周属错杀</em>，通信设备该在三个交易日内收回 10-29 跌幅的一半（4.5%）；只是维持不上调，订单天花板下移成立，这条链还要再压一段。</div></li><li><span class='t'>二、周一（11-02）<span class="term" data-t="成交额">成交额</span>缩不缩</span><div class='b'>10-30 是 1.67 万亿、1.06 倍，<span class="term" data-t="放量">放量</span>下跌。<em>缩到 1.5 万亿以下而<span class="term" data-t="指数">指数</span>不再跌，说明该卖的卖完了</em>；继续 1.6 万亿以上往下走，是有人不挑东西地卖，那时任何板块的上涨都只是临时避风处。</div></li><li><span class='t'>三、白酒能不能连着涨三天</span><div class='b'>10-30 的涨停潮买的是 8.24% 的<span class="term" data-t="股息">股息</span>率，不是业绩——同期一年定存不到 1.1%，同一个行业两种价格，差出七倍。<em>连涨三天，说明「现在能拿到手的现金」成了新的定价标准</em>，银行、煤炭、<span class="term" data-t="红利">红利</span>会跟着走；一日游，那只是月末<span class="term" data-t="调仓">调仓</span>。</div></li><li><span class='t'>四、十年期<span class="term" data-t="国债">国债</span> 1.634% 往哪走</span><div class='b'>它这周从 1.609% 的年内低点回到 1.634%，30 年期期货单日 −0.94%。<em>继续上行而股票也跌，是卖资产换现金；掉头向下而股票止跌，10-30 那天债的跌只是赚够了先卖</em>。这个判断不需要新数据，看价格就够。</div></li></ul></section>
+<section><div class='sec-head'><span class='sec-num'>06</span><h2>课程进度与下周预告</h2></div><div class='sec-note'>12 讲一循环，按依赖关系排；行情按当天最贵的那条排，两边会在中途错位。</div><div class='layer'><h3>已完成：课表走到第 3 讲的位置</h3><p>12 讲里前 3 讲（利率是万物的锚 → <span class="term" data-t="债券">债券</span>为什么会跌 → <span class="term" data-t="信用利差">信用利差</span>）已经覆盖。但正文里真正拆开讲过的词是 6 个：<span class="term" data-t="折现率">折现率</span>、市盈率、基点、放量、自由现金流、<span class="term" data-t="出清">出清</span>——其中 3 个不在课表名词里，是跟着当天的行情临时补的。这不叫跑偏：课表管依赖顺序，行情管当天最贵的那个词。</p></div><div class='layer'><h3>下周：第 4 讲「股价 = 盈利 × 估值」</h3><p>这周刚好把材料备齐了：谷歌营收同比 +25%，股价一天跌 12.64%，创它上市以来最大单日跌幅。赚得更多、卖得更便宜，说明<span class="term" data-t="盈利">盈利</span>和股价之间隔着一个「愿意付几倍」的开关——本周这个开关是别人的预算表。下周同一时间出周报，先看主线还在不在「谁付钱」这一层。</p></div></section>
+
+  <div class="learnbar" id="learnbar" data-total="441">本期标注 <b>60</b> 个词　·　点带虚线的词看解释　·　<a href="glossary.html">术语本 →</a></div>
+
+  <footer>
+    <b>数据来源</b>　行情：腾讯行情 / 新浪财经；基金净值：腾讯基金；行业板块：腾讯板块行情；
+    海外利率与宏观：见各期标注。数值均为程序抓取或人工核对后回填。<br>
+    <b>系统</b>　JMMERWANG-PC0 · 事件台账 156 条，其中未结案 80 条；
+    术语库 441 条。本期版面由 content/week-2026-W44.json 驱动。
+  </footer>
+  <div class='disc'><b>口径</b>　公开数据的整理与解释，不含建议，不含预测。数值以交易所与官方披露为准，不一致时以官方为准；取不到的项显示「—」，不做估算填充。</div>
+  <div class='nav'><a href='index.html'>← 全部报告</a></div>
+
+</div>
+
+<div id="sheet-mask"></div>
+<div id="sheet">
+  <div class="s-term"></div>
+  <div class="s-count"></div>
+  <div class="s-d"></div>
+  <div class="s-n"></div>
+  <div class="s-acts"><button class="s-done" type="button">我懂了，别再标它</button><button class="s-keep" type="button">继续标着</button></div>
+  <div class="s-close">轻触空白处关闭</div>
+</div>
+<script id="gloss" type="application/json">{"资本开支": {"d": "企业用于买设备、建厂、投研发的钱，英文 Capex。", "n": "它是需求的源头：云厂商加大资本开支，芯片和服务器就有订单。所以市场盯着它的指引，比盯利润还紧。"}, "区间": {"d": "价格在一段时间内上下波动的范围，没有明确方向。", "n": "区间行情的特征是「涨不上去也跌不下来」，此时追突破容易被打回。"}, "创业板指": {"d": "深交所创业板市值最大、流动性最好的 100 只股票，以成长型制造与医药为主。", "n": "市盈率通常高于主板，利率上行时对它的杀伤更大——这就是「分母端」的直接体现。"}, "市值": {"d": "股价乘以总股本，即市场给这家公司的总标价。", "n": "市值决定它在指数里的权重：市值越大，权重越高，它的涨跌对指数影响越大。"}, "通信设备": {"d": "做基站、光传输、交换机等通信硬件的申万二级行业，A 股 AI 算力链的主要载体之一。", "n": "它叫「通信」，但今天的定价逻辑跟运营商订单关系不大，主要跟海外云厂的采购预算挂钩。"}, "国债期货": {"d": "以国债为标的的期货合约，T 为 10 年期、TF 为 5 年期、TS 为 2 年期。", "n": "国债期货价格上涨＝市场在买債＝利率下行。它是债市情绪的实时读数。"}, "英特尔": {"d": "美国芯片公司（INTC），电脑处理器和服务器芯片的主要供应商，也是美国推动本土先进制程制造的核心厂商。", "n": "它的财报同时暴露两件事：电脑卖得好不好、数据中心投得猛不猛。看它一家跌 28%，不能直接推断整个半导体需求崩了——它有一半问题出在自己供货和份额上。"}, "估值": {"d": "市场愿意为一家公司的盈利或资产付多少钱，常用市盈率、市净率衡量。", "n": "估值不是「贵或便宜」的绝对判断，而是相对无风险利率的比较。利率变了，合理估值就变。"}, "市盈率": {"d": "股价除以每股盈利，即「愿意为每一元盈利付多少钱」。", "n": "它是判断「贵不贵」的通用尺子，但不同行业的合理区间差别极大，15 倍对银行偏高，对半导体偏低。"}, "基金": {"d": "把许多人的钱集中起来，交给管理人按约定策略投资，按份额分收益。", "n": "买基金买的是「策略＋人」，不是某只股票。所以先看清它跟踪什么、持有什么，再谈好坏。"}, "道指": {"d": "道琼斯指数的简称，美国 30 家大型公司。", "n": "媒体引用最多，专业圈用得最少，因为价格加权会让高价股影响过大。"}, "美债": {"d": "美国国债，由美国财政部发行，被全球资金当作无风险资产。", "n": "看「美债 10 年期收益率」而不是价格：它上行意味着全球折现率抬高，压制所有高估值资产。"}, "成交额": {"d": "当天买卖成交的金额合计。", "n": "价格告诉你方向，成交额告诉你这个方向有多少人参与。"}, "十年期国债": {"d": "中央政府借十年期的钱所付的利率，整条利率曲线上最关键的一个点。", "n": "它一上行，股票、债券、黄金的估值都要跟着重算，所以又叫无风险利率。看盘软件里写作「10Y 国债收益率」。"}, "宏观利率": {"d": "指国债收益率这类「无风险的钱的价格」，是所有资产定价的地板。", "n": "它只解释估值，不解释盈利——利率下行而股价还跌，说明杀的是利润预期，不是折现率。"}, "算力": {"d": "训练和运行 AI 模型要用的计算能力，落到实物就是芯片、服务器、机柜和机房。", "n": "「算力需求」和「算力订单」是两件事：需求可以一直涨，订单却卡在机房审批和资本开支预算上。看到需求数据好就买设备股，容易买在订单已经往后推的时候。"}, "盈利": {"d": "公司赚到的钱，通常指净利润。", "n": "股价＝盈利×估值。盈利变好而股价跌，说明估值在压缩；盈利没变而股价涨，说明估值在扩张。"}, "科创50": {"d": "上交所科创板市值最大的 50 只股票，以半导体、生物医药、高端装备为主。", "n": "它是全场估值最高的宽基，市盈率常在 60 倍以上，所以风格切换时跌得最狠。看它能读出市场对成长股的容忍度。"}, "云厂": {"d": "提供云计算服务的大公司，亚马逊、微软、谷歌三家为主，是全球 AI 服务器最大的买主。", "n": "它们的预算按季度公布，一次指引下调就够 A 股整条供应链重新定价，跟国内政策没有关系。"}, "创业板": {"d": "创业板指的简称，深市成长型企业的代表指数。", "n": "它是「高估值、高波动」的样本。利率上行时它跌得更多，这是分母端最直观的演示。"}, "谷歌": {"d": "美国科技公司 Alphabet 的俗称，旗下有搜索、YouTube 和谷歌云，是全球 AI 资本开支最大的几家买方之一。", "n": "它的股价和它的花钱计划是两件事：营收超预期但资本开支收缩，对上游供应商是坏消息。"}, "三季报": {"d": "上市公司披露的前三季度经营数据，每年 10 月底前必须发完。", "n": "它是一年里最后一次「可验证的盈利信息」，也是资金调整结构的主要依据。"}, "股息": {"d": "公司按每股派出的现金分红。股息除以股价，就是股息率。", "n": "股息率 5% 意味着每 100 元市值每年拿 5 元现金，和存款利息是同一把尺子。"}, "仓位": {"d": "投入资金占总可投资资金的比例。", "n": "仓位决定你能否活到判断被验证的那天，判断本身只决定赚多少。"}, "红利": {"d": "指分红率高、股价波动小的那类股票，银行、煤炭、电力是常见代表。", "n": "「红利」是一种选股方式，不是行业；同一个行业里红利属性会变，看的是当下分红率而不是标签。"}, "放量下跌": {"d": "价格下跌且成交显著放大。", "n": "代表真实抛售与分歧，通常需要更长时间消化。"}, "国债": {"d": "中央政府发行的债券，被视为本国最安全的资产。", "n": "国债收益率是所有资产定价的基准。10 年期国债收益率上行，等于全市场的折现率被抬高。"}, "亚马逊": {"d": "全球第一大云计算厂商（AWS），同样是算力的买方而非卖方。", "n": "同上：它的资本开支计划按季度公布，传闻总比公告跑得快。听到「加单」先分清是预算通过了，还是销售在放风。"}, "沪深300": {"d": "沪深两市市值最大、流动性最好的 300 只股票，被视为 A 股核心资产的代表。", "n": "多数「宽基」基金跟踪它。它的估值水平是判断 A 股整体贵不贵的基准。"}, "出清": {"d": "行业把多余的产能、渠道库存和过高预期一起减掉的过程。表现为厂家主动少发货、认损失、降价去库存，报表难看但渠道变轻。", "n": "出清只说明「不再更坏」，不等于「开始变好」。两者中间可能隔很久，期间股价可以长期横盘，把「抄底」的人熬走。"}, "红利低波": {"d": "高股息、低波动的股票组合，选股逻辑是现金流稳定加上价格波动小。", "n": "它在下跌市中抗跌，但在快速上涨中会落后——这是设计使然，不是失效。"}, "股息率": {"d": "过去 12 个月每股分红除以股价。", "n": "股息率高的指数，本质是「用现金流换波动」，不是「更安全的成长股」。"}, "SK海力士": {"d": "韩国存储芯片厂，全球 HBM（高带宽内存）的主要供应商，AI 服务器里最紧俏的那类内存多出自它。", "n": "它的财报是全球存储景气的先行指标；但它的利润来自长约与涨价，不能直接外推到国内厂商。"}, "基点": {"d": "万分之一，写作 bp。利率从 1.627% 到 1.637% 就是上行 1 个基点。", "n": "看债券和利率新闻必须换算成基点，因为 0.01% 的差别在这类资产里是显著变动。"}, "调仓": {"d": "调整持仓结构或比例，可能伴随总仓位变化。", "n": "调仓是主动行为，换仓是结构结果。前者看机构，后者看盘面。"}, "食品饮料": {"d": "申万一级行业之一，A 股 31 个一级行业里权重较大的一格，主要成分是白酒、乳品、调味品、零食等。", "n": "这个行业指数涨，八成是白酒带的；看到它涨就以为「消费全面回暖」，通常会看错。"}, "煤炭": {"d": "申万一级行业之一，挖煤、洗煤、卖电煤和焦煤。它的售价跟着电厂的日耗和港口库存走，不跟着油价走。", "n": "看到煤炭涨，别急着读成「旧能源回归」。10 月它涨 2.74% 领涨全行业，同日煤炭开采出厂价同比涨 36.6%——涨的是价格，不是销量；天气一暖、日耗一降，这条线当天就能断。"}, "指数": {"d": "用一篮子股票按规则算出的一个数字，用来代表某类股票的整体表现。", "n": "指数本身不能买，能买的是跟踪它的基金。指数涨 10% 不等于你的基金涨 10%，差额是费用和跟踪误差。"}, "债券": {"d": "借条。买债券等于把钱借出去，约定利率和到期日，到期还本。", "n": "债券的收益在买入时就基本确定（除非违约），股票不是。这是两类资产最根本的差别。"}, "纳斯达克": {"d": "以科技股为主的美国交易所指数，成分含苹果、英伟达等。", "n": "它对利率最敏感——利率一上行，长久期的成长股先跌。它是全球成长股的定价锚。"}, "覆铜板": {"d": "制造电路板的基础材料，由铜箔和树脂压合而成，AI 服务器用的规格更高、更贵。", "n": "它是典型的中间品：上游看铜价，下游看服务器订单，两头都不由自己决定。"}, "存储": {"d": "「存储芯片」的简称，行业里常说存储涨价、存储周期。", "n": "新闻里的「存储」有时指芯片、有时指模组，指的不是同一家公司，但共用同一条涨价链。"}, "电子": {"d": "申万一级行业之一，装半导体、元件、消费电子、光学光电子等，是 A 股算力链的主要载体。", "n": "不同机构口径不一样：有时「电子」只指硬件制造，有时把通信设备也算进去。看到「电子净流出多少亿」要先问是哪套分类，两套数不能相加。"}, "通信": {"d": "申万一级行业，装的是通信设备（光模块、基站、光纤）和通信服务（运营商）。算力链里「把芯片连起来」的那一段大多在这里。", "n": "它常被当成 AI 概念买，但成分里权重最大的是运营商——运营商看资费和分红，跟算力订单没关系。看到通信涨，先分清是光模块还是运营商。"}, "股票": {"d": "代表公司所有权的一小份凭证，买了就是股东，收益来自分红与股价上涨。", "n": "它的回报没有合同保证，所以定价靠预期——预期一变，价格就变，和公司当下赚不赚钱可以脱节很久。"}, "纳指": {"d": "纳斯达克指数的简称，以科技股为主。", "n": "全球成长股定价的锚。它一跌，A 股成长板块通常跟着承压，因为两者的估值逻辑共用同一个折现率。"}, "十年期美债": {"d": "美国政府借十年期的钱打的欠条，是全球资产定价的基准利率。房贷、车贷、信用卡的利率都从它往上加价。", "n": "它的涨跌一半听政策路径、一半听长期增长和通胀预期。所以加息时它可能只涨一点点——那不代表市场不信加息，是它同时在给「加不长」定价。"}, "美债收益率": {"d": "美国国债的到期收益率，10 年期是全球资产定价的基准。", "n": "它上升会同时压制全球股票估值和新兴市场货币，是外部环境里最重要的一条。"}, "泸州老窖": {"d": "四川的白酒上市公司（000568），浓香型代表之一，与茅台、五粮液同属高端白酒第一梯队。", "n": "单季收入跌 37% 还能涨停，说明涨跌跟当期业绩可以完全脱钩——别用「业绩好所以该涨」倒推它。"}, "五粮液": {"d": "四川宜宾的白酒上市公司（000858），高端白酒「浓香三强」之一，常被当作行业需求的先行指标。", "n": "它的报表常被厂家主动控货压弯：收入跌不等于没人喝，可能是酒厂自己不发货。看它要同时看批价和渠道库存。"}, "标普500": {"d": "美国 500 家大型公司按市值加权，覆盖约八成美股总市值，是美股最权威的宽基。", "n": "全球资金看美股看的是它，不是道琼斯。判断风险偏好时优先用它。"}, "板块": {"d": "把股票按行业或主题分成的组，如银行、半导体、新能源。", "n": "板块是资金流动的观察单位。普涨普跌少见，多数时候是板块之间在换手。"}, "上证50": {"d": "上交所市值最大、流动性最好的 50 只股票，以银行、保险、白酒、能源为主。", "n": "全场估值最低的宽基。它逆势上涨，通常意味着资金在避险，不是在进攻。"}, "涨停": {"d": "A 股单日涨幅达到上限（主板 10%、创业板与科创板 20%）后价格不再上移的状态。", "n": "涨停家数多只说明情绪热，不代表公司好；涨停也常出现在没有业绩的小票上。"}, "信用利差": {"d": "企业债收益率减去同期限国债收益率的差额，本质是「借钱给企业而不是国家，需要多付多少」。", "n": "利差走阔通常意味着市场在担心违约或流动性，而不是利率本身在动。区分这两件事是看懂债市的第一步。"}, "折现率": {"d": "把未来现金流换算成今天价值的比率，一般＝无风险利率＋风险溢价。", "n": "所有估值模型的分母都是它。利率一动，全市场重估。"}, "光模块": {"d": "把电信号转成光信号、让数据中心之间用光纤高速传数据的部件，AI 集群越大用得越多。", "n": "它跟着海外云厂商的资本开支走。海外不扩产，国内光模块的订单就少，跟 AI 概念热不热没关系。"}, "服务器": {"d": "数据中心里真正干活的机器，AI 训练和推理都跑在上面，是云厂资本开支的主要去向。", "n": "「AI 很热」和「服务器卖得多」不是一回事：前者是叙事，后者才进利润表。"}, "放量": {"d": "成交量明显放大，一般指超过近 20 日均量。", "n": "放量本身不说明方向，要看配的是涨还是跌：高位放量是分歧，低位放量是换手。"}, "自由现金流": {"d": "做生意收进来的钱，减去维持经营必须花的，再减去买设备建厂房的资本开支，剩下的才是公司自己能支配的。", "n": "它可以和利润反向：利润在涨、自由现金流为负，说明公司在拼命花钱换增长，花得对不对要几季后才知道。"}}</script>
+<script>
+/* vocab.js — 术语学习状态引擎
+ *
+ * 数据结构（localStorage: rd_vocab_v1）
+ *   { "科创50": {e:曝光天数, n:点击次数, s:连续未点曝光, le:最近曝光日, lc:最近点击日, m:手动标记} }
+ *   m: 0 自动 / 1 手动标为已掌握 / 2 手动要求继续显示
+ *
+ * 判定「已掌握」的两条路：
+ *   A 问过但不再问了：点击过，且曝光≥5天，且最近连续 3 次曝光没点
+ *   B 从来没问过：曝光≥5天，一次都没点过
+ * 两者都要求曝光≥5天——单次阅读不足以证明理解，重复接触后的沉默才算。
+ */
+window.RDVocab = (function () {
+  var KEY = 'rd_vocab_v1';
+  var MODE_KEY = 'rd_vocab_mode_v1';
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
+  }
+  function save(db) {
+    try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {}
+  }
+  function blank() { return { e: 0, n: 0, s: 0, le: '', lc: '', m: 0 }; }
+  function get(db, t) {
+    var v = db[t];
+    if (!v) return blank();
+    if (typeof v.e !== 'number') v = blank();
+    return v;
+  }
+
+  /* 曝光：每个词每天最多计一次 */
+  function touch(t) {
+    var db = load(), v = get(db, t);
+    if (v.m === 1) return;
+    if (v.le !== today()) { v.e += 1; v.s += 1; v.le = today(); }
+    db[t] = v; save(db);
+  }
+
+  /* 点击：清零连续未点计数 */
+  function hit(t) {
+    var db = load(), v = get(db, t);
+    v.n += 1; v.s = 0; v.lc = today();
+    if (!v.e) { v.e = 1; v.le = today(); }
+    db[t] = v; save(db);
+    return v;
+  }
+
+  function mastered(v) {
+    if (v.m === 1) return true;
+    if (v.m === 2) return false;
+    if (v.e >= 5 && v.n >= 1 && v.s >= 3) return true;
+    if (v.e >= 5 && v.n === 0 && v.s >= 5) return true;
+    return false;
+  }
+
+  /* 给一个词定性，用于术语本分组 */
+  function state(v) {
+    if (v.m === 1) return 'manual';
+    if (mastered(v)) return 'done';
+    if (v.n >= 3) return 'hard';
+    if (v.n >= 1) return 'seen';
+    if (v.e > 0) return 'new';
+    return 'idle';
+  }
+
+  function mark(t, m) {
+    var db = load(), v = get(db, t);
+    v.m = m; db[t] = v; save(db);
+  }
+
+  function mode(v) {
+    if (v !== undefined) { try { localStorage.setItem(MODE_KEY, v); } catch (e) {} }
+    try { return localStorage.getItem(MODE_KEY) || 'auto'; } catch (e) { return 'auto'; }
+  }
+
+  /* 遍历页面上的术语，去掉已掌握词的下点线 */
+  function apply(root) {
+    if (mode() === 'all') return;
+    var els = (root || document).querySelectorAll('.term');
+    var db = load();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (t && mastered(get(db, t))) els[i].classList.add('mastered');
+    }
+  }
+
+  /* 记录本页所有术语的曝光 */
+  function register(root) {
+    var els = (root || document).querySelectorAll('.term');
+    var seen = {}, db = load(), dirty = false;
+    var d = today();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (!t || seen[t]) continue;
+      seen[t] = 1;
+      var v = get(db, t);
+      if (v.m === 1) continue;
+      if (v.le !== d) { v.e += 1; v.s += 1; v.le = d; }
+      db[t] = v; dirty = true;
+    }
+    if (dirty) save(db);
+    return Object.keys(seen).length;
+  }
+
+  function stats(all) {
+    var db = load(), done = 0, touched = 0, hard = 0;
+    for (var k in db) {
+      var v = get(db, k);
+      if (mastered(v)) done++;
+      if (v.e > 0) touched++;
+      if (v.n >= 3 && !mastered(v)) hard++;
+    }
+    return { done: done, touched: touched, hard: hard, total: all || 0 };
+  }
+
+  function dump() {
+    try { return btoa(unescape(encodeURIComponent(JSON.stringify(load())))); } catch (e) { return ''; }
+  }
+  function load2(code) {
+    try {
+      var o = JSON.parse(decodeURIComponent(escape(atob(String(code).trim()))));
+      if (o && typeof o === 'object') { save(o); return true; }
+    } catch (e) {}
+    return false;
+  }
+  function reset() { try { localStorage.removeItem(KEY); } catch (e) {} }
+
+  return { load: load, get: get, touch: touch, hit: hit, mastered: mastered, state: state,
+           mark: mark, mode: mode, apply: apply, register: register, stats: stats,
+           dump: dump, load2: load2, reset: reset, today: today };
+})();
+
+</script>
+<script>
+(function () {
+  var V = window.RDVocab;
+  var sheet = document.getElementById('sheet');
+  var mask = document.getElementById('sheet-mask');
+  var raw = document.getElementById('gloss');
+  var GLOSS = {};
+  if (raw) { try { GLOSS = JSON.parse(raw.textContent); } catch (e) { GLOSS = {}; } }
+  if (!V) return;
+
+  /* 先把已掌握的词降为普通文字，再登记曝光，避免先标后隐的闪动 */
+  V.apply(document);
+  var n = V.register(document);
+
+  var bar = document.getElementById('learnbar');
+  var TOTAL = bar ? parseInt(bar.getAttribute('data-total'), 10) || 0 : 0;
+  function paintBar() {
+    if (!bar) return;
+    var st = V.stats();
+    bar.innerHTML = "本期标注 <b>" + n + "</b> 个词　·　术语库里已掌握 <b>" + st.done +
+      "</b> / " + TOTAL + " 条　·　<a href='glossary.html'>术语本 →</a>";
+  }
+  paintBar();
+
+  if (!sheet) return;
+  var tEl = sheet.querySelector('.s-term');
+  var dEl = sheet.querySelector('.s-d');
+  var nEl = sheet.querySelector('.s-n');
+  var cnt = sheet.querySelector('.s-count');
+  var btnDone = sheet.querySelector('.s-done');
+  var btnKeep = sheet.querySelector('.s-keep');
+  var cur = null;
+
+  function refreshCount() {
+    if (!cur || !cnt) return;
+    var v = V.get(V.load(), cur);
+    var bits = [];
+    if (v.n) bits.push('已点开 ' + v.n + ' 次');
+    if (v.e) bits.push('见过 ' + v.e + ' 天');
+    if (v.n >= 3) bits.push('这个词你反复查，值得记下来');
+    else if (v.n === 2) bits.push('第二次点开它了');
+    cnt.textContent = bits.join('　·　');
+  }
+
+  function open(term) {
+    cur = term;
+    var g = GLOSS[term];
+    tEl.textContent = term;
+    dEl.textContent = g ? g.d : '词库中暂无该词条，待补充。';
+    nEl.textContent = g && g.n ? g.n : '';
+    nEl.style.display = g && g.n ? 'block' : 'none';
+    var m = V.get(V.load(), term).m;
+    if (btnKeep) btnKeep.style.display = m === 1 ? 'inline-block' : 'none';
+    if (btnDone) btnDone.style.display = m === 1 ? 'none' : 'inline-block';
+    refreshCount();
+    document.body.classList.add('sheet-open');
+  }
+  function close() { document.body.classList.remove('sheet-open'); cur = null; }
+
+  function repaint(term, m) {
+    V.mark(term, m);
+    var els = document.querySelectorAll('.term[data-t="' + term.replace(/"/g, '\\"') + '"]');
+    for (var i = 0; i < els.length; i++) {
+      if (m === 1) els[i].classList.add('mastered');
+      else els[i].classList.remove('mastered');
+    }
+    paintBar();
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.term') : null;
+    if (t) {
+      var term = t.getAttribute('data-t');
+      V.hit(term);
+      open(term);
+      e.preventDefault();
+      return;
+    }
+    if (e.target === mask) { close(); return; }
+    if (e.target.classList && e.target.classList.contains('s-close')) { close(); return; }
+    if (e.target === btnDone && cur) { repaint(cur, 1); close(); return; }
+    if (e.target === btnKeep && cur) { repaint(cur, 2); close(); return; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+</script>
+<script>
+
+(function(){
+  // 词条在词库缺失时给出提示，不静默失败
+  document.documentElement.classList.add('js-ready');
+  var code = null;
+  try { code = new URLSearchParams(location.search).get('sharecode'); } catch(e) {}
+  if (!code) return;
+  var as = document.querySelectorAll('a[href]');
+  for (var i=0;i<as.length;i++){
+    var h = as[i].getAttribute('href');
+    if (!h || h.charAt(0)==='#' || /^(mailto:|javascript:|tel:)/i.test(h)) continue;
+    var u;
+    try { u = new URL(h, location.href); } catch(e) { continue; }
+    if (u.origin !== location.origin) continue;
+    u.searchParams.set('sharecode', code);
+    as[i].setAttribute('href', u.pathname + u.search + u.hash);
+  }
+})();
+
+</script>
+</body></html>
