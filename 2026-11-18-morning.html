@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F0">
+<title>2026-11-18 早报 · 营收超预期 6%，盘后只涨 2.8%：卡住英伟达的是毛利率</title>
+<style>
+/* 投研日报 · 版面样式
+   米白纸底、墨黑正文、砖红点缀；手机优先，正文 16px，行高 1.85 */
+
+:root{
+  --paper:#FAF7F0;
+  --paper2:#F2EDE2;
+  --paper3:#FFFDF8;
+  --ink:#1B1A17;
+  --ink2:#4E4A42;
+  --ink3:#837C6E;
+  --rule:#DCD4C4;
+  --rule2:#EBE4D6;
+  --accent:#8E2F22;
+  --up:#A93A2C;
+  --down:#2E6B4F;
+  --neutral:#8A8275;
+  --serif:"Songti SC","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:var(--paper);overflow-x:hidden}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.85;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px 72px;overflow-x:clip}
+
+/* ---------- 报头 ---------- */
+.masthead{padding:28px 0 0;text-align:center}
+.masthead .org{
+  font-size:10.5px;letter-spacing:.34em;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:14px;
+}
+.masthead .name{
+  font-family:var(--serif);font-size:31px;font-weight:700;
+  letter-spacing:.16em;line-height:1.2;margin:0;
+}
+.masthead .sub{
+  font-size:11.5px;color:var(--ink3);letter-spacing:.08em;margin-top:10px;
+}
+.rule-double{
+  height:5px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);
+  margin:16px 0 0;
+}
+.metabar{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11px;color:var(--ink3);letter-spacing:.06em;
+  padding:8px 0 18px;border-bottom:1px solid var(--rule);
+}
+
+/* ---------- 导语 ---------- */
+.lead{padding:26px 0 6px}
+.kicker{
+  font-size:10.5px;letter-spacing:.22em;color:var(--accent);
+  margin-bottom:12px;font-weight:600;
+}
+h1.headline{
+  font-family:var(--serif);font-size:26px;line-height:1.42;
+  font-weight:700;margin:0 0 14px;letter-spacing:.01em;
+}
+.standfirst{font-size:15px;line-height:1.8;color:var(--ink2);margin:0}
+.standfirst strong{color:var(--ink);font-weight:600}
+
+/* ---------- 章节 ---------- */
+section{margin-top:34px}
+.sec-head{border-top:2px solid var(--ink);padding-top:11px;margin-bottom:16px}
+.sec-num{
+  font-size:10px;letter-spacing:.24em;color:var(--accent);
+  font-weight:700;display:block;margin-bottom:3px;
+}
+.sec-head h2{
+  font-family:var(--serif);font-size:18px;font-weight:700;
+  margin:0;letter-spacing:.06em;
+}
+.sec-note{font-size:12.5px;color:var(--ink3);line-height:1.7;margin:-6px 0 14px}
+p{margin:0 0 15px}
+.tight p:last-child{margin-bottom:0}
+
+/* ---------- 行情表 ---------- */
+table.tape{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+table.tape th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:right;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.tape th:first-child{text-align:left}
+table.tape td{
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+  text-align:right;color:var(--ink2);overflow-wrap:anywhere;
+}
+table.tape td:first-child{text-align:left;color:var(--ink)}
+table.tape tr:last-child td{border-bottom:1px solid var(--rule)}
+table.tape th:nth-child(1),table.tape td:nth-child(1){width:40%}
+table.tape th:nth-child(2),table.tape td:nth-child(2){width:21%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:24%}
+table.tape th:nth-child(3),table.tape td:nth-child(3){width:23%;padding-right:9px}
+table.tape th:nth-child(4),table.tape td:nth-child(4){width:16%;padding-left:9px;border-left:1px solid var(--rule2);font-size:12.5px;color:var(--ink3)}
+table.tape th:nth-child(4){font-size:9.5px}
+.up{color:var(--up)}
+.down{color:var(--down)}
+.flat{color:var(--neutral)}
+.sub{font-size:11.5px;color:var(--ink3);display:block;line-height:1.6;margin-top:2px}
+
+/* ---------- 情绪仪表盘 ---------- */
+.gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin:16px 0 10px}
+.gauge{background:var(--paper3);border:1px solid var(--rule2);padding:11px 12px 12px}
+.gauge .g-label{font-size:11px;color:var(--ink3);letter-spacing:.04em}
+.gauge .g-val{
+  font-family:var(--serif);font-size:20px;line-height:1.3;
+  margin:2px 0 1px;color:var(--ink);
+}
+.gauge .g-tag{font-size:10.5px;color:var(--accent);letter-spacing:.06em}
+.g-track{
+  position:relative;height:4px;background:var(--paper2);
+  margin-top:9px;border-radius:2px;
+}
+.g-track i{
+  position:absolute;top:-3px;width:2px;height:10px;
+  background:var(--ink);border-radius:1px;
+}
+.g-scale{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink3);margin-top:5px}
+.temp{
+  display:flex;align-items:baseline;gap:10px;
+  border-top:1px solid var(--rule);padding-top:12px;margin-top:4px;
+}
+.temp b{font-family:var(--serif);font-size:26px;line-height:1}
+.temp span{font-size:12px;color:var(--ink3)}
+
+/* ---------- 归因 ---------- */
+.layer{border-left:2px solid var(--rule);padding-left:14px;margin-bottom:20px}
+.layer h3{
+  font-size:13.5px;margin:0 0 6px;letter-spacing:.04em;font-weight:600;
+}
+.layer h3 em{
+  font-style:normal;font-size:10.5px;color:var(--ink3);
+  margin-left:8px;letter-spacing:.06em;
+}
+.layer p{font-size:15px;color:var(--ink2);margin:0}
+
+/* ---------- 回溯 ---------- */
+.trace-item{
+  padding:12px 0 13px;border-bottom:1px solid var(--rule2);
+}
+.trace-item:last-child{border-bottom:none}
+.trace-top{display:flex;gap:8px;align-items:baseline;margin-bottom:5px}
+.verdict{
+  font-size:10px;letter-spacing:.12em;padding:2px 6px;
+  border:1px solid currentColor;flex:none;border-radius:2px;
+}
+.v-hit{color:var(--ink)}
+.v-miss{color:var(--accent)}
+.v-open{color:var(--neutral)}
+.trace-title{font-size:14px;color:var(--ink);line-height:1.6}
+.trace-note{font-size:13px;color:var(--ink3);line-height:1.7;margin:0}
+.trace-id{font-size:10px;color:var(--ink3);letter-spacing:.06em}
+
+/* ---------- 持仓 ---------- */
+.hold-item{padding:13px 0;border-bottom:1px solid var(--rule2)}
+.hold-item:last-child{border-bottom:none}
+.hold-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.hold-name{font-size:14.5px;color:var(--ink);line-height:1.5}
+.hold-chg{font-size:14px;flex:none}
+.hold-meta{display:flex;gap:10px;align-items:center;margin:4px 0 6px}
+.hold-code{font-size:10.5px;color:var(--ink3);letter-spacing:.04em}
+.dir{font-size:10.5px;letter-spacing:.08em;white-space:nowrap;border:1px solid currentColor;padding:0 5px;border-radius:2px;line-height:1.6}
+.chain{font-size:12.5px;color:var(--ink3);line-height:1.72}
+table.overnight th:nth-child(1),table.overnight td:nth-child(1){width:47%}
+table.overnight th:nth-child(2),table.overnight td:nth-child(2){width:22%}
+table.overnight th:nth-child(3),table.overnight td:nth-child(3){width:31%}
+.metabar{flex-wrap:wrap;gap:4px 12px}
+
+/* ---------- 日历 ---------- */
+.cal{list-style:none;padding:0;margin:0}
+.cal li{
+  display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule2);
+}
+.cal .t{
+  font-size:11.5px;color:var(--accent);letter-spacing:.04em;
+  flex:none;width:58px;padding-top:2px;
+}
+.cal .w{font-size:14px;line-height:1.68}
+.cal .w b{font-weight:600}
+.cal .w span{display:block;font-size:12.5px;color:var(--ink3);margin-top:2px}
+
+/* ---------- 小课堂 ---------- */
+.lesson{
+  background:var(--paper3);border:1px dashed var(--rule);
+  padding:18px 16px;margin-top:6px;
+}
+.lesson .lk{
+  font-size:10.5px;letter-spacing:.16em;color:var(--accent);margin-bottom:8px;
+}
+.lesson h3{
+  font-family:var(--serif);font-size:17px;margin:0 0 12px;letter-spacing:.04em;
+}
+.lesson p{font-size:14.5px;color:var(--ink2);line-height:1.85;margin:0 0 12px}
+.lesson .pit{
+  font-size:12.5px;color:var(--accent);border-top:1px solid var(--rule);
+  padding-top:10px;margin-top:2px;line-height:1.7;
+}
+.lesson .pit b{letter-spacing:.04em}
+
+/* ---------- 术语 ---------- */
+.term{
+  border-bottom:1px dotted rgba(142,47,34,.74);
+  padding-bottom:2px;
+  cursor:pointer;color:inherit;
+}
+.term:active{background:rgba(142,47,34,.08)}
+table.tape .term,table.hold .term,.gauge .term{border-bottom-color:rgba(142,47,34,.5)}
+
+#sheet-mask{
+  position:fixed;inset:0;background:rgba(27,26,23,.28);
+  opacity:0;pointer-events:none;transition:opacity .18s;z-index:40;
+}
+#sheet{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--paper3);border-top:2px solid var(--ink);
+  border-radius:14px 14px 0 0;
+  transform:translateY(102%);transition:transform .22s ease;
+  padding:18px 22px calc(22px + env(safe-area-inset-bottom));
+  max-height:70vh;overflow:auto;
+  box-shadow:0 -8px 28px rgba(0,0,0,.10);
+}
+body.sheet-open #sheet{transform:translateY(0)}
+body.sheet-open #sheet-mask{opacity:1;pointer-events:auto}
+#sheet .s-term{
+  font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:10px;
+}
+#sheet .s-d{font-size:14.5px;color:var(--ink);line-height:1.8;margin-bottom:10px}
+#sheet .s-n{
+  font-size:13px;color:var(--ink3);line-height:1.75;
+  border-left:2px solid var(--accent);padding-left:10px;
+}
+#sheet .s-close{
+  font-size:11px;color:var(--ink3);letter-spacing:.1em;margin-top:14px;text-align:right;
+}
+
+/* ---------- 脚注 ---------- */
+footer{
+  margin-top:44px;border-top:1px solid var(--ink);padding-top:14px;
+  font-size:11.5px;color:var(--ink3);line-height:1.8;
+}
+footer b{color:var(--ink2);font-weight:600}
+.disc{
+  background:var(--paper2);padding:13px 15px;margin-top:18px;
+  font-size:11.5px;color:var(--ink2);line-height:1.75;
+}
+.nav{
+  display:flex;gap:14px;font-size:12px;margin-top:26px;
+  padding-top:14px;border-top:1px solid var(--rule);
+}
+.nav a{color:var(--accent);text-decoration:none}
+.nav a.dim{color:var(--ink3)}
+
+/* ---------- 首页 ---------- */
+.card-list{list-style:none;padding:0;margin:0}
+.card-list li{border-bottom:1px solid var(--rule2);padding:13px 0}
+.card-list a{
+  text-decoration:none;color:var(--ink);display:block;
+}
+.card-list .cl-date{
+  font-size:10.5px;color:var(--ink3);letter-spacing:.1em;margin-bottom:4px;
+  display:flex;gap:10px;align-items:center;
+}
+.tag{
+  font-size:9.5px;letter-spacing:.12em;border:1px solid var(--rule);
+  padding:1px 5px;color:var(--ink2);border-radius:2px;
+}
+.tag.am{border-color:rgba(142,47,34,.4);color:var(--accent)}
+.tag.pm{background:var(--paper2);border-color:var(--rule);color:var(--ink2)}
+.tag.wk{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card-list .cl-title{font-family:var(--serif);font-size:16px;line-height:1.5}
+.card-list .cl-sub{font-size:12.5px;color:var(--ink3);line-height:1.65;margin-top:4px}
+.thread{
+  border-left:2px solid var(--rule);padding:2px 0 2px 13px;margin-bottom:15px;
+}
+.thread .th-t{font-size:13.5px;color:var(--ink);margin-bottom:3px}
+.thread .th-s{font-size:12.5px;color:var(--ink3);line-height:1.7}
+.big-num{
+  font-family:var(--serif);font-size:24px;
+}
+
+@media (min-width:560px){
+  h1.headline{font-size:30px}
+  .masthead .name{font-size:37px}
+  .gauges{grid-template-columns:1fr 1fr 1fr}
+}
+
+/* ---------- 术语：已掌握后收起下点线（仍可点开） ---------- */
+.term.mastered{
+  border-bottom:none;
+  color:inherit;
+}
+.term.mastered:active{background:none}
+
+/* ---------- 页末学习提示条 ---------- */
+.learnbar{
+  margin-top:40px;padding:12px 14px;
+  background:var(--paper2);border-left:2px solid var(--accent);
+  font-size:12px;color:var(--ink2);line-height:1.75;
+}
+.learnbar b{color:var(--ink);font-weight:600}
+.learnbar a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(142,47,34,.3)}
+
+/* ---------- 弹层：统计与操作 ---------- */
+#sheet .s-count{
+  font-size:11px;color:var(--ink3);letter-spacing:.04em;margin:-4px 0 12px;
+}
+#sheet .s-acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+#sheet .s-acts button{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+#sheet .s-acts .s-done{border-color:var(--accent);color:var(--accent)}
+#sheet .s-acts button:active{background:var(--paper2)}
+
+/* ---------- 术语本 ---------- */
+.vprog{margin:22px 0 6px}
+.vprog .vbar{
+  height:4px;background:var(--rule2);position:relative;overflow:hidden;
+}
+.vprog .vbar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);transition:width .3s}
+.vprog .vmeta{
+  margin-top:9px;font-size:11.5px;color:var(--ink3);letter-spacing:.03em;
+}
+.vprog .vmeta b{color:var(--ink);font-weight:600}
+
+.vtabs{display:flex;gap:0;margin:20px 0 0;border-bottom:1px solid var(--ink)}
+.vtab{
+  flex:1;font:inherit;font-size:12px;padding:9px 2px;cursor:pointer;
+  background:none;border:0;border-bottom:2px solid transparent;
+  color:var(--ink3);letter-spacing:.04em;
+}
+.vtab.on{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+
+.vq{
+  width:100%;margin:16px 0 4px;padding:9px 2px;font:inherit;font-size:14px;
+  background:none;border:0;border-bottom:1px solid var(--rule);color:var(--ink);
+}
+.vq::placeholder{color:var(--ink3)}
+
+.vlist{margin-top:6px}
+.vitem{
+  padding:15px 0;border-bottom:1px solid var(--rule2);
+}
+.vitem.is-done{opacity:.55}
+.vh{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.vt{font-family:var(--serif);font-size:16.5px;font-weight:700;color:var(--ink)}
+.vb{font-size:10px;letter-spacing:.06em;padding:1px 6px;border:1px solid var(--rule);color:var(--ink3);white-space:nowrap}
+.vb.hard{border-color:var(--accent);color:var(--accent)}
+.vb.done{border-color:var(--down);color:var(--down)}
+.vb.seen{border-color:var(--ink3);color:var(--ink2)}
+.vd{font-size:13.5px;color:var(--ink);line-height:1.75}
+.vn{font-size:12.5px;color:var(--ink3);line-height:1.75;margin-top:4px;padding-left:9px;border-left:2px solid var(--rule)}
+.vfoot{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:8px;font-size:11px;color:var(--ink3);gap:10px;
+}
+.vbtn{
+  font:inherit;font-size:11px;padding:4px 10px;cursor:pointer;white-space:nowrap;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vbtn:active{background:var(--paper2)}
+.vempty{padding:26px 0;font-size:13px;color:var(--ink3);text-align:center}
+
+.vacts{display:flex;gap:10px;margin:14px 0 10px;flex-wrap:wrap}
+.vact{
+  font:inherit;font-size:12.5px;padding:7px 14px;cursor:pointer;
+  background:none;border:1px solid var(--rule);color:var(--ink2);border-radius:2px;
+}
+.vact.dim{color:var(--ink3)}
+.vcode{
+  display:none;width:100%;font:12px/1.6 var(--sans);padding:10px;
+  background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);
+  border-radius:2px;resize:vertical;
+}
+.vhint{font-size:11.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.vrule .vr{
+  font-size:13px;color:var(--ink2);line-height:1.8;
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+}
+.vrule .vr b{color:var(--ink)}
+.vrule .vr.dim{color:var(--ink3);font-size:12px}
+
+/* ---------- 新手向新体裁组件（2026-10-28 增）
+   四段式：账面 → 拆一条 → 明天看什么 → 今天该懂的一个词
+   共同点：每个数字后面必须跟一句「所以呢」，即 .ba 锚点句 */
+
+/* 账面表：左列名称，右列数值 + 锚点句 */
+table.board{width:100%;border-collapse:collapse;font-size:14.5px;table-layout:fixed}
+table.board th{
+  font-size:10.5px;font-weight:500;color:var(--ink3);letter-spacing:.1em;
+  text-align:left;padding:0 0 7px;border-bottom:1px solid var(--ink);
+}
+table.board td{padding:11px 0;border-bottom:1px solid var(--rule2);vertical-align:top}
+table.board tr:last-child td{border-bottom:1px solid var(--rule)}
+table.board td:first-child{
+  width:31%;color:var(--ink);padding-right:12px;line-height:1.6;
+}
+table.board .bv{
+  font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.35;
+  display:block;letter-spacing:.01em;
+}
+table.board .ba{
+  display:block;font-size:12.5px;color:var(--ink3);line-height:1.68;margin-top:3px;
+}
+table.board .ba b,table.board .ba strong{color:var(--ink2);font-weight:600}
+
+/* 拆一条：四步骨架 */
+.story-h{
+  font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.5;
+  margin:0 0 16px;letter-spacing:.01em;
+}
+.q{border-left:2px solid var(--rule);padding-left:15px}
+.q .step{margin-bottom:20px}
+.q .step:last-child{margin-bottom:0}
+.q .lbl{
+  display:block;font-size:10.5px;letter-spacing:.16em;color:var(--accent);
+  font-weight:700;margin-bottom:5px;
+}
+.q .step p{font-size:15px;line-height:1.85;color:var(--ink2);margin:0}
+.q .step p strong{color:var(--ink);font-weight:600}
+
+/* 明天看什么 */
+ul.sig{list-style:none;padding:0;margin:0}
+ul.sig li{padding:13px 0;border-bottom:1px solid var(--rule2)}
+ul.sig li:last-child{border-bottom:none}
+ul.sig .t{
+  display:block;font-family:var(--serif);font-size:15.5px;font-weight:700;
+  color:var(--ink);margin-bottom:5px;
+}
+ul.sig .b{font-size:14.5px;line-height:1.8;color:var(--ink2)}
+ul.sig .b em{font-style:normal;color:var(--ink);font-weight:600;
+  border-bottom:1px solid rgba(142,47,34,.4)}
+
+/* 今天该懂的一个词 */
+.word{background:var(--paper3);border:1px solid var(--rule2);padding:16px 16px 6px}
+.word .w{
+  font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);
+  margin:0 0 12px;line-height:1.4;
+}
+.word .w small{
+  display:block;font-family:var(--sans);font-size:11px;font-weight:400;
+  color:var(--ink3);letter-spacing:.08em;margin-top:3px;
+}
+.word p{font-size:14.5px;line-height:1.85;color:var(--ink2);margin:0 0 12px}
+.word p strong{color:var(--ink);font-weight:600}
+
+</style>
+</head><body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="org">Personal Research Desk</div>
+    <div class="name">投研日报</div>
+    <div class="sub">早报 · 晚报 · 周报　｜　新闻框架，不做预测</div>
+  </div>
+  <div class="rule-double"></div>
+  <div class="metabar">
+    <span>2026-11-18　早报　第 30 期 · 盘前</span>
+    <span>A 股、板块、成交为 11-17 收盘；美股、美债、商品为 11-17 美东收盘；英伟达财报为 11-17 美东盘后（北京时间 11-18 约 05:20），盘后价不计入当日涨跌幅；中债为 11-17 中债国债收益率曲线 16:30 估值</span>
+  </div>
+
+  <div class="lead">
+    <div class="kicker">定性：卖得更多，每块赚得更少</div>
+    <h1 class="headline">营收超预期 6%，盘后只涨 2.8%：卡住英伟达的是毛利率</h1>
+    <p class="standfirst">11 月 17 日美东盘后，<span class="term" data-t="英伟达">英伟达</span>公布第三财季营收 1,158 亿美元，同比翻倍，比市场预期高 6%；第四财季指引 1,300 亿美元，也高于预期。但盘后只涨约 2.8%，而市场原本押它<span class="term" data-t="财报">财报</span>后波动七到八个点。<strong>数字全<span class="term" data-t="超预期">超预期</span>，价格只挪了一小步——因为同一份财报里，<span class="term" data-t="毛利率">毛利率</span>指引从 74.9% 掉到 71%–72%，每 100 块收入要少留 3 块多。</strong></p>
+  </div>
+
+  <section><div class='sec-head'><span class='sec-num'>01</span><h2>昨夜的钱价</h2></div><div class='sec-note'>六行。第一行是财报后的盘后价，第二、三行是美股收盘，第四行是钱的价格，最后两行是国内利率与油。<span class="term" data-t="宏观利率">宏观利率</span>这一行最不像这一周：<span class="term" data-t="美债">美债</span>和<span class="term" data-t="中债">中债</span>同时往下。</div><table class='board'><tr><th>看什么</th><th>今天怎么了</th></tr><tr><td>英伟达（盘后）</td><td><span class='bv up'>+2.8%</span><span class='ba'>100 块变 102.8 块。市场原本押它波动七到八块，实际只走了三分之一——超预期没换成价格。</span></td></tr><tr><td><span class="term" data-t="纳斯达克">纳斯达克</span></td><td><span class='bv down'>24,328.38（−0.74%）</span><span class='ba'>100 块变 99.26 块。真正重的是<span class="term" data-t="道指">道指</span>，跌 1.64%，跌幅是<span class="term" data-t="纳指">纳指</span>两倍多：钱不是在换<span class="term" data-t="板块">板块</span>，是在往外走。</span></td></tr><tr><td>费城半导体</td><td><span class='bv up'>+0.34%</span><span class='ba'>100 块变 100.34 块，三连跌后第一次收红，而且发生在财报之前——有人提前站队。</span></td></tr><tr><td><span class="term" data-t="十年期美债">十年期美债</span></td><td><span class='bv down'>5.111%（−2.2BP）</span><span class='ba'>借 100 块一年付 5.11 块利息，比前一天少两分钱；但它已在 5% 上方待了很久，逼近二十年来最长的一段。</span></td></tr><tr><td>中国<span class="term" data-t="十年期国债">十年期国债</span></td><td><span class='bv down'>1.61%（−2.3BP）</span><span class='ba'>和一年定存 1.1% 只差半个百分点。昨天从 1.63% 退回，1.65% 那道压力线没碰到。</span></td></tr><tr><td><span class="term" data-t="布伦特原油">布伦特原油</span></td><td><span class='bv up'>93.02 美元（+1.27%）</span><span class='ba'>一桶贵 1.17 美元，100 块的油变 101.27 块，理由是霍尔木兹的船还在挨打。同一天现货金跌 0.17% 收 3,849。</span></td></tr></table></section>
+<section><div class='sec-head'><span class='sec-num'>02</span><h2>拆一条</h2></div><h3 class='story-h'>卖得更多，每块赚得更少</h3><div class='q'><div class='step'><span class='lbl'>发生了什么</span><p>11 月 17 日美东盘后，北京时间 11 月 18 日约 05:20，英伟达公布截至 10 月 25 日的第三财季：营收 1,158 亿美元，同比翻倍，比市场预期的 1,093 亿高 6%；其中<span class="term" data-t="数据中心">数据中心</span> 1,076 亿，预期 1,019 亿。第四财季指引 1,300 亿美元、上下 3%，同样高于预期。<br><br>但盘后只涨约 2.8%。同一份财报里还有一句更硬的：第四财季毛利率指引 71%–72%，而这个季度是 74.9%。</p></div><div class='step'><span class='lbl'>为什么会这样</span><p>因为市场买的不是「卖多少」，是「每卖 100 块能留下几块」。<br><br>第一跳，毛利率从 74.9% 掉到指引中值 71.5%，每 100 块收入留下的毛利从 74.9 块变成 71.5 块，少 3.4 块。第二跳，指引的 1,300 亿乘上这 3.4 块，约 44 亿美元——那不是没赚到，是被成本吃掉了。第三跳，新闻稿里唯一和成本沾边的一句是「第四财季多一个礼拜」，可多一个礼拜能多卖货，解释不了 3 个点，拆解得等电话会。<br><br>所以这是一次「量」和「率」分开：订单没塌，加价能力在下台阶。财报出来前，<span class="term" data-t="做空">做空</span>机构<span class="term" data-t="浑水">浑水</span>还公开说自己在做空它——这种声音不改数字，但改别人怎么读数字。</p></div><div class='step'><span class='lbl'>这跟你有什么关系</span><p>如果你没持有：今天九点半，A 股<span class="term" data-t="算力">算力</span>链要同时消化两件事——指引超预期是好消息，毛利率下台阶是坏消息。昨天<span class="term" data-t="通信">通信</span>已经跌 2.27%，所以低开不代表又有新坏消息，高开也不代表这条翻篇了。<br><br>如果你已持有：<span class="term" data-t="光模块">光模块</span>、<span class="term" data-t="服务器">服务器</span>这些是给英伟达配套的。它自己的毛利率往下走，意味着这条链上「谁都能加价」的日子在收尾。100 块收入少留 3.4 块，落到代工厂身上，通常不是分摊，是全额。</p></div><div class='step'><span class='lbl'>什么情况下这条会错</span><p>如果今天<span class="term" data-t="费半">费半</span>连着第二天收红、A 股算力链低开后半小时把跌幅收回一半以上，说明市场把它读成「爬坡期的短期成本」，不是「加价能力见顶」——那我这条就错了。<br><br>反过来，如果盘后那 2.8% 在今天美股开盘前回吐，或者<span class="term" data-t="中际旭创">中际旭创</span>再出一次 200 亿以上天量却不涨，说明钱在借好消息出货。</p></div></div></section>
+<section><div class='sec-head'><span class='sec-num'>03</span><h2>今天盯什么</h2></div><div class='sec-note'>三条，每条写「看到什么 → 意味着什么」。只留今天能验证的。</div><ul class='sig'><li><span class='t'>一、九点半：算力链怎么开、怎么收</span><div class='b'>昨天通信 −2.27%，中际旭创 204.75 亿天量却不涨。<em>低开后半小时收回一半以上，说明市场读的是「短期成本」；跌幅反而扩大，或<span class="term" data-t="半导体材料">半导体材料</span>的抱团<span class="term" data-t="炸板">炸板</span>，说明读的是「加价能力见顶」。</em></div></li><li><span class='t'>二、今晚 <span class="term" data-t="Anthropic">Anthropic</span> 定价</span><div class='b'>定价<span class="term" data-t="区间">区间</span> 70–78 美元，明天在纳斯达克挂牌，消息称超购 10–20 倍。<em>定在上限或超上限，说明<span class="term" data-t="一级市场">一级市场</span>还愿意给 AI 付溢价；定在下限，是<span class="term" data-t="二级市场">二级市场</span>的<span class="term" data-t="估值">估值</span>先被打折。</em></div></li><li><span class='t'>三、十年期美债守不守 5%</span><div class='b'>现在 5.111%，站在 5% 上方的时间逼近二十年最长；明天凌晨 3:00 出十月会议纪要。<em>纪要偏鹰、10Y 站住 5% 以上，「利率压估值」这一条会重新生效；跌回 5% 以下，今天美股的压力就只剩毛利率一项。</em></div></li></ul></section>
+<section><div class='sec-head'><span class='sec-num'>04</span><h2>今天该懂的一个词</h2></div><div class='word'><p class='w'>毛利率<small>卖 100 块，能留下几块</small></p><p>一句话：毛利率就是每 100 块收入里，扣掉直接成本后还剩几块。剩下的那几块，才拿去付研发、工资和利息。</p><p>算例：英伟达这个季度收入 1,158 亿、毛利率 74.9%，毛利约 867 亿；第四财季指引 1,300 亿、毛利率 71.5%，毛利约 930 亿。收入多了 142 亿，毛利只多 63 亿——每 100 块赚得更少，总量还是变多了。<br><br>这就是为什么盘后没崩：生意还在长，只是长得更费钱。</p><p>它会怎么骗你：「毛利率下滑」和「利润下滑」是两件事。量涨得快，毛利额照样创新高；反过来，毛利率只掉 1 个点，<span class="term" data-t="净利润">净利润</span>可能掉一成，因为费用是固定的。看到毛利率，先问一句：掉的是价，还是成本。</p></div></section>
+
+  <div class="learnbar" id="learnbar" data-total="501">本期标注 <b>31</b> 个词　·　点带虚线的词看解释　·　<a href="glossary.html">术语本 →</a></div>
+
+  <footer>
+    <b>数据来源</b>　行情：腾讯行情 / 新浪财经；基金净值：腾讯基金；行业板块：腾讯板块行情；
+    海外利率与宏观：见各期标注。数值均为程序抓取或人工核对后回填。<br>
+    <b>系统</b>　JMMERWANG-PC0 · 事件台账 221 条，其中未结案 104 条；
+    术语库 501 条。本期版面由 content/2026-11-18-morning.json 驱动。
+  </footer>
+  <div class='disc'><b>口径</b>　公开数据的整理与解释，不含建议，不含预测。数值以交易所与官方披露为准，不一致时以官方为准；取不到的项显示「—」，不做估算填充。</div>
+  <div class='nav'><a href='index.html'>← 全部报告</a></div>
+
+</div>
+
+<div id="sheet-mask"></div>
+<div id="sheet">
+  <div class="s-term"></div>
+  <div class="s-count"></div>
+  <div class="s-d"></div>
+  <div class="s-n"></div>
+  <div class="s-acts"><button class="s-done" type="button">我懂了，别再标它</button><button class="s-keep" type="button">继续标着</button></div>
+  <div class="s-close">轻触空白处关闭</div>
+</div>
+<script id="gloss" type="application/json">{"二级市场": {"d": "股票挂牌之后，普通人在交易所里买卖的那个市场。", "n": "二级市场每天只有一个价，但这个价受当天利率、情绪、资金面影响，和公司的长期价值不是一回事——同一天同一只股票，开盘和收盘能差 13%。"}, "财报": {"d": "公司定期公布的经营与财务报告，A 股分一季报、半年报、三季报、年报。", "n": "财报是分子端唯一的一手证据。市场在财报季的波动，多来自预期差而不是绝对好坏。"}, "做空": {"d": "先借别人的股票卖掉，等价格跌下去再买回来还回去，赚中间的差价。", "n": "做空不等于「它一定会跌」，只说明有人愿意为这个方向付利息和保证金。知名机构喊做空，最有杀伤力的是时机——财报前几个小时发一条帖子，能改的是别人怎么读数字，不是数字本身。"}, "净利润": {"d": "扣除成本、费用和税之后剩下的利润。", "n": "看它要分清「主业赚的」和「卖资产赚的」，后者不可持续。"}, "一级市场": {"d": "股票还没挂牌、只在机构之间买卖的那个阶段，发行价就是在这里定的。", "n": "一级市场的价是承销商和机构谈出来的，不含当天买卖的情绪；二级市场第一天的价才是所有人用真金白银投的票，两者可以差三成。"}, "美债": {"d": "美国国债，由美国财政部发行，被全球资金当作无风险资产。", "n": "看「美债 10 年期收益率」而不是价格：它上行意味着全球折现率抬高，压制所有高估值资产。"}, "板块": {"d": "把股票按行业或主题分成的组，如银行、半导体、新能源。", "n": "板块是资金流动的观察单位。普涨普跌少见，多数时候是板块之间在换手。"}, "数据中心": {"d": "放满服务器、给 AI 训练和云服务供电供冷的机房。它是这一轮 AI 投资里最花钱的实物资产，也是芯片、光模块、服务器的最终去处。", "n": "决定它能不能建的往往不是钱，是电力和地方审批。看到「算力需求爆了」先问一句：电从哪来、许可批了没有。"}, "毛利率": {"d": "收入减去直接成本后占收入的比例。", "n": "毛利率的变化方向比绝对值更能反映议价能力。"}, "中际旭创": {"d": "A 股光模块龙头（深市 300308），把上游的 DSP 芯片和激光器组装成高速光模块，卖给海外云厂商。", "n": "它是「AI 算力要多少光模块」这条逻辑纯度最高的标的之一，所以对上游供应格局和海外订单的传闻极度敏感，一天跌一成不稀奇。"}, "中债": {"d": "「中债」指中国银行间市场的国债，对应的是「美债」。两个国家的借钱价格各由自己的央行和存款决定。", "n": "最容易犯的错是拿美债的涨跌直接推 A 股：A 股估值里的折现率用的是中债，不是美债。"}, "十年期美债": {"d": "美国政府借十年期的钱打的欠条，是全球资产定价的基准利率。房贷、车贷、信用卡的利率都从它往上加价。", "n": "它的涨跌一半听政策路径、一半听长期增长和通胀预期。所以加息时它可能只涨一点点——那不代表市场不信加息，是它同时在给「加不长」定价。"}, "浑水": {"d": "Muddy Waters，美国做空机构，靠发布质疑报告打压股价获利，曾多次针对中概股。", "n": "它的报告是「指控」，不是「认定」；被它点名之后股价跌多少，取决于有没有别人跟着卖，不取决于报告写得多细。"}, "服务器": {"d": "数据中心里真正干活的机器，AI 训练和推理都跑在上面，是云厂资本开支的主要去向。", "n": "「AI 很热」和「服务器卖得多」不是一回事：前者是叙事，后者才进利润表。"}, "半导体材料": {"d": "芯片制造要用的硅片、光刻胶、电子特气、靶材、抛光液这类耗材，属于上游。", "n": "它常和「半导体设备」「芯片设计」被混为一谈。材料涨价传导慢、客户认证周期长，所以它能逆势涨，往往说明资金在找「跌不动」而不是「要变好」。"}, "区间": {"d": "价格在一段时间内上下波动的范围，没有明确方向。", "n": "区间行情的特征是「涨不上去也跌不下来」，此时追突破容易被打回。"}, "算力": {"d": "训练和运行 AI 模型要用的计算能力，落到实物就是芯片、服务器、机柜和机房。", "n": "「算力需求」和「算力订单」是两件事：需求可以一直涨，订单却卡在机房审批和资本开支预算上。看到需求数据好就买设备股，容易买在订单已经往后推的时候。"}, "十年期国债": {"d": "中央政府借十年期的钱所付的利率，整条利率曲线上最关键的一个点。", "n": "它一上行，股票、债券、黄金的估值都要跟着重算，所以又叫无风险利率。看盘软件里写作「10Y 国债收益率」。"}, "通信": {"d": "申万一级行业，装的是通信设备（光模块、基站、光纤）和通信服务（运营商）。算力链里「把芯片连起来」的那一段大多在这里。", "n": "它常被当成 AI 概念买，但成分里权重最大的是运营商——运营商看资费和分红，跟算力订单没关系。看到通信涨，先分清是光模块还是运营商。"}, "超预期": {"d": "实际数据与市场预期之差。", "n": "价格反应取决于超预期部分，而不是数据绝对值。这是初学者最常见的误判。"}, "估值": {"d": "市场愿意为一家公司的盈利或资产付多少钱，常用市盈率、市净率衡量。", "n": "估值不是「贵或便宜」的绝对判断，而是相对无风险利率的比较。利率变了，合理估值就变。"}, "道指": {"d": "道琼斯指数的简称，美国 30 家大型公司。", "n": "媒体引用最多，专业圈用得最少，因为价格加权会让高价股影响过大。"}, "英伟达": {"d": "美国芯片设计公司（NVDA），AI 训练用 GPU 的主要供应商，全球算力链最核心的一环。", "n": "它站在「卖铲子」那一端：涨跌跟云厂商买多少卡走，跟 AI 概念热不热不完全同步。它自己的客户极度集中，一家云厂推迟采购就够它跌一成——所以它跌 9% 不等于行业需求少了 9%。"}, "光模块": {"d": "把电信号转成光信号、让数据中心之间用光纤高速传数据的部件，AI 集群越大用得越多。", "n": "它跟着海外云厂商的资本开支走。海外不扩产，国内光模块的订单就少，跟 AI 概念热不热没关系。"}, "纳斯达克": {"d": "以科技股为主的美国交易所指数，成分含苹果、英伟达等。", "n": "它对利率最敏感——利率一上行，长久期的成长股先跌。它是全球成长股的定价锚。"}, "Anthropic": {"d": "美国人工智能公司，做 Claude 系列大模型，2026 年 11 月正在推进首次公开募股。", "n": "它的估值是整条 AI 链的情绪锚：认购火爆会带着上游算力股一起涨，但认购需求是「想买的人多」，不是「公司赚得多」。"}, "布伦特原油": {"d": "北大西洋布伦特油田的现货原油价格，全球约三分之二的原油贸易用它定价，是油价的国际基准。", "n": "新闻说「油价涨」多数指它，但国内成品油跟的是另一套调价机制；它受地缘消息驱动，一天的涨跌不代表供需真变了。"}, "费半": {"d": "费城半导体指数的简称，就是那只装美国芯片股的指数。", "n": "它是简称，覆盖的只有美国上市的芯片公司；看到「费半跌 5%」不等于 A 股半导体跟着跌 5%，两者成分股几乎不重叠。"}, "宏观利率": {"d": "指国债收益率这类「无风险的钱的价格」，是所有资产定价的地板。", "n": "它只解释估值，不解释盈利——利率下行而股价还跌，说明杀的是利润预期，不是折现率。"}, "纳指": {"d": "纳斯达克指数的简称，以科技股为主。", "n": "全球成长股定价的锚。它一跌，A 股成长板块通常跟着承压，因为两者的估值逻辑共用同一个折现率。"}, "炸板": {"d": "盘中摸到涨停、收盘又掉下来的情况。炸板多，说明接力的人不肯守，今天的钱是来抢筹码不是来持股的。", "n": "炸板率突然从 20% 跳到 40% 以上，通常意味着这一轮题材开始有人跑，但单日一次不算趋势。"}}</script>
+<script>
+/* vocab.js — 术语学习状态引擎
+ *
+ * 数据结构（localStorage: rd_vocab_v1）
+ *   { "科创50": {e:曝光天数, n:点击次数, s:连续未点曝光, le:最近曝光日, lc:最近点击日, m:手动标记} }
+ *   m: 0 自动 / 1 手动标为已掌握 / 2 手动要求继续显示
+ *
+ * 判定「已掌握」的两条路：
+ *   A 问过但不再问了：点击过，且曝光≥5天，且最近连续 3 次曝光没点
+ *   B 从来没问过：曝光≥5天，一次都没点过
+ * 两者都要求曝光≥5天——单次阅读不足以证明理解，重复接触后的沉默才算。
+ */
+window.RDVocab = (function () {
+  var KEY = 'rd_vocab_v1';
+  var MODE_KEY = 'rd_vocab_mode_v1';
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
+  }
+  function save(db) {
+    try { localStorage.setItem(KEY, JSON.stringify(db)); } catch (e) {}
+  }
+  function blank() { return { e: 0, n: 0, s: 0, le: '', lc: '', m: 0 }; }
+  function get(db, t) {
+    var v = db[t];
+    if (!v) return blank();
+    if (typeof v.e !== 'number') v = blank();
+    return v;
+  }
+
+  /* 曝光：每个词每天最多计一次 */
+  function touch(t) {
+    var db = load(), v = get(db, t);
+    if (v.m === 1) return;
+    if (v.le !== today()) { v.e += 1; v.s += 1; v.le = today(); }
+    db[t] = v; save(db);
+  }
+
+  /* 点击：清零连续未点计数 */
+  function hit(t) {
+    var db = load(), v = get(db, t);
+    v.n += 1; v.s = 0; v.lc = today();
+    if (!v.e) { v.e = 1; v.le = today(); }
+    db[t] = v; save(db);
+    return v;
+  }
+
+  function mastered(v) {
+    if (v.m === 1) return true;
+    if (v.m === 2) return false;
+    if (v.e >= 5 && v.n >= 1 && v.s >= 3) return true;
+    if (v.e >= 5 && v.n === 0 && v.s >= 5) return true;
+    return false;
+  }
+
+  /* 给一个词定性，用于术语本分组 */
+  function state(v) {
+    if (v.m === 1) return 'manual';
+    if (mastered(v)) return 'done';
+    if (v.n >= 3) return 'hard';
+    if (v.n >= 1) return 'seen';
+    if (v.e > 0) return 'new';
+    return 'idle';
+  }
+
+  function mark(t, m) {
+    var db = load(), v = get(db, t);
+    v.m = m; db[t] = v; save(db);
+  }
+
+  function mode(v) {
+    if (v !== undefined) { try { localStorage.setItem(MODE_KEY, v); } catch (e) {} }
+    try { return localStorage.getItem(MODE_KEY) || 'auto'; } catch (e) { return 'auto'; }
+  }
+
+  /* 遍历页面上的术语，去掉已掌握词的下点线 */
+  function apply(root) {
+    if (mode() === 'all') return;
+    var els = (root || document).querySelectorAll('.term');
+    var db = load();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (t && mastered(get(db, t))) els[i].classList.add('mastered');
+    }
+  }
+
+  /* 记录本页所有术语的曝光 */
+  function register(root) {
+    var els = (root || document).querySelectorAll('.term');
+    var seen = {}, db = load(), dirty = false;
+    var d = today();
+    for (var i = 0; i < els.length; i++) {
+      var t = els[i].getAttribute('data-t');
+      if (!t || seen[t]) continue;
+      seen[t] = 1;
+      var v = get(db, t);
+      if (v.m === 1) continue;
+      if (v.le !== d) { v.e += 1; v.s += 1; v.le = d; }
+      db[t] = v; dirty = true;
+    }
+    if (dirty) save(db);
+    return Object.keys(seen).length;
+  }
+
+  function stats(all) {
+    var db = load(), done = 0, touched = 0, hard = 0;
+    for (var k in db) {
+      var v = get(db, k);
+      if (mastered(v)) done++;
+      if (v.e > 0) touched++;
+      if (v.n >= 3 && !mastered(v)) hard++;
+    }
+    return { done: done, touched: touched, hard: hard, total: all || 0 };
+  }
+
+  function dump() {
+    try { return btoa(unescape(encodeURIComponent(JSON.stringify(load())))); } catch (e) { return ''; }
+  }
+  function load2(code) {
+    try {
+      var o = JSON.parse(decodeURIComponent(escape(atob(String(code).trim()))));
+      if (o && typeof o === 'object') { save(o); return true; }
+    } catch (e) {}
+    return false;
+  }
+  function reset() { try { localStorage.removeItem(KEY); } catch (e) {} }
+
+  return { load: load, get: get, touch: touch, hit: hit, mastered: mastered, state: state,
+           mark: mark, mode: mode, apply: apply, register: register, stats: stats,
+           dump: dump, load2: load2, reset: reset, today: today };
+})();
+
+</script>
+<script>
+(function () {
+  var V = window.RDVocab;
+  var sheet = document.getElementById('sheet');
+  var mask = document.getElementById('sheet-mask');
+  var raw = document.getElementById('gloss');
+  var GLOSS = {};
+  if (raw) { try { GLOSS = JSON.parse(raw.textContent); } catch (e) { GLOSS = {}; } }
+  if (!V) return;
+
+  /* 先把已掌握的词降为普通文字，再登记曝光，避免先标后隐的闪动 */
+  V.apply(document);
+  var n = V.register(document);
+
+  var bar = document.getElementById('learnbar');
+  var TOTAL = bar ? parseInt(bar.getAttribute('data-total'), 10) || 0 : 0;
+  function paintBar() {
+    if (!bar) return;
+    var st = V.stats();
+    bar.innerHTML = "本期标注 <b>" + n + "</b> 个词　·　术语库里已掌握 <b>" + st.done +
+      "</b> / " + TOTAL + " 条　·　<a href='glossary.html'>术语本 →</a>";
+  }
+  paintBar();
+
+  if (!sheet) return;
+  var tEl = sheet.querySelector('.s-term');
+  var dEl = sheet.querySelector('.s-d');
+  var nEl = sheet.querySelector('.s-n');
+  var cnt = sheet.querySelector('.s-count');
+  var btnDone = sheet.querySelector('.s-done');
+  var btnKeep = sheet.querySelector('.s-keep');
+  var cur = null;
+
+  function refreshCount() {
+    if (!cur || !cnt) return;
+    var v = V.get(V.load(), cur);
+    var bits = [];
+    if (v.n) bits.push('已点开 ' + v.n + ' 次');
+    if (v.e) bits.push('见过 ' + v.e + ' 天');
+    if (v.n >= 3) bits.push('这个词你反复查，值得记下来');
+    else if (v.n === 2) bits.push('第二次点开它了');
+    cnt.textContent = bits.join('　·　');
+  }
+
+  function open(term) {
+    cur = term;
+    var g = GLOSS[term];
+    tEl.textContent = term;
+    dEl.textContent = g ? g.d : '词库中暂无该词条，待补充。';
+    nEl.textContent = g && g.n ? g.n : '';
+    nEl.style.display = g && g.n ? 'block' : 'none';
+    var m = V.get(V.load(), term).m;
+    if (btnKeep) btnKeep.style.display = m === 1 ? 'inline-block' : 'none';
+    if (btnDone) btnDone.style.display = m === 1 ? 'none' : 'inline-block';
+    refreshCount();
+    document.body.classList.add('sheet-open');
+  }
+  function close() { document.body.classList.remove('sheet-open'); cur = null; }
+
+  function repaint(term, m) {
+    V.mark(term, m);
+    var els = document.querySelectorAll('.term[data-t="' + term.replace(/"/g, '\\"') + '"]');
+    for (var i = 0; i < els.length; i++) {
+      if (m === 1) els[i].classList.add('mastered');
+      else els[i].classList.remove('mastered');
+    }
+    paintBar();
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.term') : null;
+    if (t) {
+      var term = t.getAttribute('data-t');
+      V.hit(term);
+      open(term);
+      e.preventDefault();
+      return;
+    }
+    if (e.target === mask) { close(); return; }
+    if (e.target.classList && e.target.classList.contains('s-close')) { close(); return; }
+    if (e.target === btnDone && cur) { repaint(cur, 1); close(); return; }
+    if (e.target === btnKeep && cur) { repaint(cur, 2); close(); return; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+
+</script>
+<script>
+
+(function(){
+  // 词条在词库缺失时给出提示，不静默失败
+  document.documentElement.classList.add('js-ready');
+  var code = null;
+  try { code = new URLSearchParams(location.search).get('sharecode'); } catch(e) {}
+  if (!code) return;
+  var as = document.querySelectorAll('a[href]');
+  for (var i=0;i<as.length;i++){
+    var h = as[i].getAttribute('href');
+    if (!h || h.charAt(0)==='#' || /^(mailto:|javascript:|tel:)/i.test(h)) continue;
+    var u;
+    try { u = new URL(h, location.href); } catch(e) { continue; }
+    if (u.origin !== location.origin) continue;
+    u.searchParams.set('sharecode', code);
+    as[i].setAttribute('href', u.pathname + u.search + u.hash);
+  }
+})();
+
+</script>
+</body></html>
